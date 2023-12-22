@@ -1,0 +1,12 @@
+.header-icon {
+    width: 32px;
+    height: auto;
+}
+
+.clear-form-button {
+    
+}
+
+.clear-form-button:hover {
+    cursor: pointer;
+}

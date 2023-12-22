@@ -1,13 +1,26 @@
 export { EditorSection };
 
+import '../../../style/editor.css';
+
 import { EditorHeader } from "./EditorHeader";
 import { EditorControls } from "./EditorControls";
 
-function EditorSection() {
+function EditorSection({
+    appStateControlHandlers,
+    generalInfoChange,
+    educationalExperienceChange,
+    practicalExperienceChange,
+}) {
     return (
-        <main className="container-main">
-            <EditorHeader />
-            <EditorControls />
-        </main>
+        <section className="container-section">
+            <EditorHeader
+                {...appStateControlHandlers}
+            />
+            <EditorControls
+                generalInfoChange={generalInfoChange}
+                educationalExperienceChange={educationalExperienceChange}
+                practicalExperienceChange={practicalExperienceChange}
+            />
+        </section>
     );
 }

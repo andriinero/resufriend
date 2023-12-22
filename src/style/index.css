@@ -9,20 +9,26 @@
 }
 
 input {
+    margin: 0.2em 1em 0.2em 1em;
     padding: 0.5em;
     border: 1px solid rgba(128, 128, 128, 1);
     border-radius: 0.5rem;
     box-shadow: 0 0 0.5em rgb(0 0 0 / 0.2);
 }
 
-.container-main {
+.main-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.container-section {
     padding: 1em;
     display: flex;
     flex-direction: column;
     gap: 2em;
 }
 
-.container-item {
+.container-section-item {
     max-width: 100%;
     padding: 1em;
     border-radius: 0.5rem;
@@ -32,4 +38,3 @@ input {
     flex-direction: column;
     gap: 1em;
 }
-
