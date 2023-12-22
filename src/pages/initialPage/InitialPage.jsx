@@ -4,6 +4,7 @@ import { useState } from "react";
 import { EditorSection } from "./editor/EditorSection";
 import { ScreenSection } from "./screen/ScreenSection";
 import getResetStateObject from "../../utils/getResetStateObject";
+import getDummyState from "../../utils/getDummyState";
 
 function InitialPage() {
     const [generalInfo, setGeneralInfo] = useState({
@@ -32,6 +33,14 @@ function InitialPage() {
         setPracticalExperience(getResetStateObject(practicalExperience));
     }
 
+    function generateDummyText() {
+        const [tempGeneralInfo, tempEducationalExperience, tempPracticalExperience] = getDummyState();
+
+        setGeneralInfo(tempGeneralInfo);
+        setEducationalExperience(tempEducationalExperience);
+        setPracticalExperience(tempPracticalExperience);
+    }
+
     const generalHandlerContainer = {
         firstNameHandler: (e) => setGeneralInfo({ ...generalInfo, firstName: e.target.value }),
         lastNameHandler: (e) => setGeneralInfo({ ...generalInfo, lastName: e.target.value }),
@@ -55,7 +64,8 @@ function InitialPage() {
     // TODO: app state control handlers container
 
     const appStateControlHandlers = {
-        resetStates
+        resetStates,
+        generateDummyText
     }
 
     return (

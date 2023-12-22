@@ -3,10 +3,6 @@
     height: auto;
 }
 
-.clear-form-button {
-    
-}
-
 .clear-form-button:hover {
     cursor: pointer;
 }
