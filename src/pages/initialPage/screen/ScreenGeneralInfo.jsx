@@ -5,25 +5,19 @@ function ScreenGeneralInfo({
     lastName,
     email,
     phoneNumber,
-}) {
+}) { 
     return (
-        <div className="container-section-item">
-            <h2>General Info</h2>
-            <div className="output-field">
-                <h4 className="placeholder-label">First Name:</h4>
-                <span>{firstName}</span>
-            </div>
-            <div className="output-field">
-                <h4 className="placeholder-label">Last Name:</h4>
-                <span>{lastName}</span>
-            </div>
-            <div className="output-field">
-                <h4 className="placeholder-label">Email:</h4>
-                <span>{email}</span>
-            </div>
-            <div className="output-field">
-                <h4 className="placeholder-label">Phone Number:</h4>
-                <span>{phoneNumber}</span>
+        <div className="screen-header">
+            <h1 className="screen-full-name">{firstName} {lastName}</h1>
+            <div className="container-misc-info">
+                <div className="misc-info-item">
+                    <img className="screen-icon" src="../../../public/email.svg" alt="Email Icon" />
+                    {email}
+                </div>
+                <div className="misc-info-item">
+                    <img className="screen-icon" src="../../../public/phone.svg" alt="Email Icon" />
+                    {phoneNumber}
+                </div>
             </div>
         </div>
     );

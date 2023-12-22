@@ -1,8 +1,15 @@
-.header-icon {
-    width: 32px;
-    height: auto;
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.clear-form-button:hover {
-    cursor: pointer;
+.header-controls {
+    display: flex;
+    gap: 3rem;
+}
+
+.header-icon {
+    width: 48px;
+    height: auto;
 }

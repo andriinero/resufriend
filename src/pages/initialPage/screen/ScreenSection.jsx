@@ -13,16 +13,18 @@ function ScreenSection({
 }
 ) {
     return (
-        <section className="container-section">
-            <ScreenGeneralInfo
-                {...generalInfo}
-            />
-            <EducationalExperience
-                {...educationalExperience}
-            />
-            <PracticalExperience
-                {...practicalExperience}
-            />
+        <section className="screen-section">
+            <div className="screen-page">
+                <ScreenGeneralInfo
+                    {...generalInfo}
+                />
+                <EducationalExperience
+                    {...educationalExperience}
+                />
+                <PracticalExperience
+                    {...practicalExperience}
+                />
+            </div>
         </section>
     );
 }

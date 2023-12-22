@@ -33,12 +33,12 @@ function InitialPage() {
         setPracticalExperience(getResetStateObject(practicalExperience));
     }
 
-    function generateDummyText() {
-        const [tempGeneralInfo, tempEducationalExperience, tempPracticalExperience] = getDummyState();
+    function setDummyState() {
+        const [dummyGeneralInfo, dummyEducationalExperience, dummyPracticalExperience] = getDummyState();
 
-        setGeneralInfo(tempGeneralInfo);
-        setEducationalExperience(tempEducationalExperience);
-        setPracticalExperience(tempPracticalExperience);
+        setGeneralInfo(dummyGeneralInfo);
+        setEducationalExperience(dummyEducationalExperience);
+        setPracticalExperience(dummyPracticalExperience);
     }
 
     const generalHandlerContainer = {
@@ -61,11 +61,9 @@ function InitialPage() {
         employmentPeriodHandler: (e) => setPracticalExperience({ ...practicalExperience, employmentPeriod: e.target.value })
     }
 
-    // TODO: app state control handlers container
-
     const appStateControlHandlers = {
         resetStates,
-        generateDummyText
+        setDummyState
     }
 
     return (

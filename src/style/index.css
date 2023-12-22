@@ -18,10 +18,10 @@ input {
 
 .main-page {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
 }
 
-.container-section {
+.editor-section {
     padding: 1em;
     display: flex;
     flex-direction: column;
@@ -32,9 +32,27 @@ input {
     max-width: 100%;
     padding: 1em;
     border-radius: 0.5rem;
-    box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
+    box-shadow: 0 0 1.5em rgb(0 0 0 / 0.2);
 
     display: flex;
     flex-direction: column;
     gap: 1em;
+}
+
+.control-icon:hover {
+    cursor: pointer;
+}
+
+
+@media print {
+    .main-page {
+        grid-template-columns: 1fr;
+        font-size: 1.3rem;
+    }
+    .container-section {
+        display: none;
+    }
+    .screen-page {
+        box-shadow: none;
+    }
 }

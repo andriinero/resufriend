@@ -7,23 +7,15 @@ function PracticalExperience({
     employmentPeriod,
 }) {
     return (
-        <div className="container-section-item">
-            <h2>Practical Experience</h2>
-            <div className="output-field">
-                <h4 className="placeholder-label">Company Name:</h4>
-                <span>{companyName}</span>
-            </div>
-            <div className="output-field">
-                <h4 className="placeholder-label">Position Title:</h4>
-                <span>{positionTitle}</span>
-            </div>
-            <div className="output-field">
-                <h4 className="placeholder-label">Main Responsibilities:</h4>
-                <span>{mainResponsibilities}</span>
-            </div>
-            <div className="output-field">
-                <h4 className="placeholder-label">Employment Period:</h4>
-                <span>{employmentPeriod}</span>
+        <div className="screen-container">
+            <h2 className="experience-header">Practical Experience</h2>
+            <div className="experience-container">
+                <div className="experience-item">
+                    <h3 className="experience-item-header">{companyName}</h3>
+                    <p className="experience-item-title">{positionTitle}</p>
+                    <p className="experience-item-text">{mainResponsibilities}</p>
+                    <p className="experience-item-date">{employmentPeriod}</p>
+                </div>
             </div>
         </div>
     );

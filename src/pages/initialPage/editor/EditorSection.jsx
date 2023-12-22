@@ -12,7 +12,7 @@ function EditorSection({
     practicalExperienceChange,
 }) {
     return (
-        <section className="container-section">
+        <section className="editor-section">
             <EditorHeader
                 {...appStateControlHandlers}
             />
