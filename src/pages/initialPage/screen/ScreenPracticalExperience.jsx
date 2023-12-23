@@ -1,21 +1,17 @@
-export { PracticalExperience };
+import { ExperienceItemPractical } from "../../../components/editor/ExperienceItemPractical";
 
-function PracticalExperience({
-    companyName,
-    positionTitle,
-    mainResponsibilities,
-    employmentPeriod,
+export { ScreenPracticalExperience };
+
+function ScreenPracticalExperience({
+    practicalExperienceContainer
 }) {
     return (
         <div className="screen-container">
-            {companyName && <h2 className="screen-container__header">Practical Experience</h2>}
+            {practicalExperienceContainer.length !== 0 && <h2 className="screen-container__header">Practical Experience</h2>}
             <div className="experience">
-                <div className="experience__item">
-                    <h3 className="experience__item-header">{companyName}</h3>
-                    <p className="experience__item-title">{positionTitle}</p>
-                    <p className="experience__item-text">{mainResponsibilities}</p>
-                    <p className="experience__item-date">{employmentPeriod}</p>
-                </div>
+                {practicalExperienceContainer.map((experienceData) => {
+                    return <ExperienceItemPractical key={experienceData.companyName} {...experienceData} />;
+                })}
             </div>
         </div>
     );

@@ -7,6 +7,7 @@ import getResetStateObject from "../../utils/getResetStateObject";
 import getDummyState from "../../utils/getDummyState";
 
 function InitialPage() {
+    // Current user input data
     const [generalInfo, setGeneralInfo] = useState({
         firstName: '',
         lastName: '',
@@ -27,6 +28,24 @@ function InitialPage() {
         mainResponsibilities: '',
         employmentPeriod: '',
     });
+
+    // User experience data containers
+    const [educationalExperienceContainer, setEducationalExperienceContainer] = useState([]);
+
+    function writeEducationalExperienceHandler() {
+        setEducationalExperienceContainer(
+            [...educationalExperienceContainer, educationalExperience]
+        );
+    }
+
+    const [practicalExperienceContainer, setPracticalExperienceContainer] = useState([]);
+
+    function writePracticalExperienceHandler() {
+        console.log('ping');
+        setPracticalExperienceContainer(
+            [...practicalExperienceContainer, practicalExperience]
+        );
+    }
 
     const generalHandlerContainer = {
         firstNameHandler: (e) => setGeneralInfo({ ...generalInfo, firstName: e.target.value }),
@@ -73,13 +92,13 @@ function InitialPage() {
             <EditorSection
                 appStateControlHandlers={appStateControlHandlers}
                 generalInfoChange={{ generalInfo, generalHandlerContainer }}
-                educationalExperienceChange={{ educationalExperience, educationalHandlerContainer }}
-                practicalExperienceChange={{ practicalExperience, practicalHandlerContainer }}
+                educationalExperienceChange={{ educationalExperience, educationalHandlerContainer, writeEducationalExperienceHandler }}
+                practicalExperienceChange={{ practicalExperience, practicalHandlerContainer, writePracticalExperienceHandler }}
             />
             <ScreenSection
                 generalInfo={generalInfo}
-                educationalExperience={educationalExperience}
-                practicalExperience={practicalExperience}
+                educationalExperienceContainer={educationalExperienceContainer}
+                practicalExperienceContainer={practicalExperienceContainer}
             />
         </main>
     );

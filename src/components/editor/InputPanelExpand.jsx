@@ -1,6 +1,6 @@
-export { InputPanelIcon };
+export { InputPanelExpand };
 
-function InputPanelIcon({
+function InputPanelExpand({
     isExpanded,
     toggleExpandHandler,
 }) {

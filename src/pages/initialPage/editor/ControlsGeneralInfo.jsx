@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { InputPanelIcon } from "../../../components/editor/InputPanelIcon";
+import { InputPanelExpand } from "../../../components/editor/InputPanelExpand";
 import { InputPanelGeneral } from "../../../components/editor/InputPanelGeneral";
 
 export { ControlsGeneralInfo };
@@ -19,7 +19,7 @@ function ControlsGeneralInfo(props) {
                     <img className="input-panel__title-icon" src="../../../public/general-information.svg" alt="General Information Icon" />
                     <h1 className="input-panel__title-h1">General Information</h1>
                 </div>
-                <InputPanelIcon isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
+                <InputPanelExpand isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
             </div>
             <InputPanelGeneral isExpanded={isExpanded} {...props} />
         </div>

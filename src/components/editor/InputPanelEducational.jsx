@@ -8,6 +8,7 @@ function InputPanelEducational({
     schoolNameHandler,
     titleOfStudyHandler,
     dateOfStudyHandler,
+    writeEducationalExperienceHandler
 }) {
     const expandedClass = isExpanded ? 'input-panel' : 'input-panel--hidden';
 
@@ -31,6 +32,7 @@ function InputPanelEducational({
                     <input value={dateOfStudy} onChange={dateOfStudyHandler} id="date-of-study" type="text" placeholder="01.01.2001-01.01.2002" />
                 </div>
             </div>
+            <button onClick={writeEducationalExperienceHandler} type="button">Save</button>
         </div>
     );
 }

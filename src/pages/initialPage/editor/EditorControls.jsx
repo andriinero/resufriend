@@ -18,10 +18,12 @@ function EditorControls({
             <ControlsEducationalExperience
                 {...educationalExperienceChange.educationalExperience}
                 {...educationalExperienceChange.educationalHandlerContainer}
+                writeEducationalExperienceHandler={educationalExperienceChange.writeEducationalExperienceHandler}
             />
             <ControlsPracticalExperience
                 {...practicalExperienceChange.practicalExperience}
                 {...practicalExperienceChange.practicalHandlerContainer}
+                writePracticalExperienceHandler={practicalExperienceChange.writePracticalExperienceHandler}
             />
         </>
     );

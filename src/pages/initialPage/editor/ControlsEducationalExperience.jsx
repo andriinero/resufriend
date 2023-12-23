@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { InputPanelEducational } from "../../../components/editor/InputPanelEducational";
-import { InputPanelIcon } from "../../../components/editor/InputPanelIcon";
+import { InputPanelExpand } from "../../../components/editor/InputPanelExpand";
 
 export { ControlsEducationalExperience };
 
@@ -8,7 +8,6 @@ function ControlsEducationalExperience(props) {
     const [isExpanded, setIsExpanded] = useState(true);
 
     function toggleExpandHandler(e) {
-        console.log('ping');
         setIsExpanded(!isExpanded);
     }
 
@@ -19,7 +18,7 @@ function ControlsEducationalExperience(props) {
                     <img className="input-panel__title-icon" src="../../../public/educational-experience.svg" alt="General Information Icon" />
                     <h1 className="input-panel__title-h1">Educational Experience</h1>
                 </div>
-                <InputPanelIcon isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
+                <InputPanelExpand isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
             </div>
             <InputPanelEducational isExpanded={isExpanded} {...props} />
         </div>
