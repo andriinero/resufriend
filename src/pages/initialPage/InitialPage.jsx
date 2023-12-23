@@ -5,6 +5,7 @@ import { EditorSection } from "./editor/EditorSection";
 import { ScreenSection } from "./screen/ScreenSection";
 import getResetStateObject from "../../utils/getResetStateObject";
 import getDummyState from "../../utils/getDummyState";
+import validateExperienceData from "../../utils/validateExperienceData";
 
 function InitialPage() {
     // Current user input data
@@ -33,18 +34,25 @@ function InitialPage() {
     const [educationalExperienceContainer, setEducationalExperienceContainer] = useState([]);
 
     function writeEducationalExperienceHandler() {
+        if (!validateExperienceData(educationalExperience)) return;
+
         setEducationalExperienceContainer(
             [...educationalExperienceContainer, educationalExperience]
         );
+
+        resetEducationalExperience();
     }
 
     const [practicalExperienceContainer, setPracticalExperienceContainer] = useState([]);
 
     function writePracticalExperienceHandler() {
-        console.log('ping');
+        if (!validateExperienceData(practicalExperience)) return;
+
         setPracticalExperienceContainer(
             [...practicalExperienceContainer, practicalExperience]
         );
+
+        resetPracticalExperience();
     }
 
     const generalHandlerContainer = {
@@ -71,6 +79,14 @@ function InitialPage() {
     function resetStates() {
         setGeneralInfo(getResetStateObject(generalInfo));
         setEducationalExperience(getResetStateObject(educationalExperience));
+        setPracticalExperience(getResetStateObject(practicalExperience));
+    }
+
+    function resetEducationalExperience() {
+        setEducationalExperience(getResetStateObject(educationalExperience));
+    }
+
+    function resetPracticalExperience() {
         setPracticalExperience(getResetStateObject(practicalExperience));
     }
 
