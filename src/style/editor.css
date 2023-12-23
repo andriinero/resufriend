@@ -1,15 +1,41 @@
-.header-container {
+.editor-section {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.editor-section__container {
+    max-width: 100%;
+    padding: 1em;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1.5em rgb(0 0 0 / 0.2);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.editor-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.header-controls {
+.editor-header__controls {
     display: flex;
     gap: 3rem;
 }
 
-.header-icon {
+.editor-header__icon {
     width: 48px;
     height: auto;
 }
+
+.control-icon:hover {
+    cursor: pointer;
+}
+
+.input-panel {}
+
+.input-panel__item {}

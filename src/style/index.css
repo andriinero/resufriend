@@ -21,38 +21,28 @@ input {
     grid-template-columns: 1fr 1.5fr;
 }
 
-.editor-section {
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-}
-
-.container-section-item {
-    max-width: 100%;
-    padding: 1em;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 1.5em rgb(0 0 0 / 0.2);
-
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
-.control-icon:hover {
-    cursor: pointer;
-}
-
-
 @media print {
     .main-page {
         grid-template-columns: 1fr;
-        font-size: 1.3rem;
     }
-    .container-section {
+
+    .editor-section {
         display: none;
     }
-    .screen-page {
+
+    .screen {
         box-shadow: none;
+    }
+
+    .screen-header {
+        color: var(--experience-header-txt-clr);
+    }
+
+    .screen-header__icon {
+        filter: invert(16%) sepia(71%) saturate(637%) hue-rotate(159deg) brightness(89%) contrast(94%);
+    }
+
+    .screen-container__header {
+        text-decoration: underline;
     }
 }

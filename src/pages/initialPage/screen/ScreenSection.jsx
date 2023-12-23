@@ -14,7 +14,7 @@ function ScreenSection({
 ) {
     return (
         <section className="screen-section">
-            <div className="screen-page">
+            <div className="screen">
                 <ScreenGeneralInfo
                     {...generalInfo}
                 />
