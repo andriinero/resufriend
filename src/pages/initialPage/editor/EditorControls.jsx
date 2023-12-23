@@ -10,8 +10,7 @@ function EditorControls({
     practicalExperienceChange,
 }) {
     return (
-        <div className="editor-section__container">
-            <h1>Controls</h1>
+        <>
             <ControlsGeneralInfo
                 {...generalInfoChange.generalInfo}
                 {...generalInfoChange.generalHandlerContainer}
@@ -24,6 +23,6 @@ function EditorControls({
                 {...practicalExperienceChange.practicalExperience}
                 {...practicalExperienceChange.practicalHandlerContainer}
             />
-        </div>
+        </>
     );
 }

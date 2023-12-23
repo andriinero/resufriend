@@ -7,7 +7,7 @@ function EducationalExperience({
 }) {
     return (
         <div className="screen-container">
-            <h2 className="screen-container__header">Educational Experience</h2>
+            {schoolName && <h2 className="screen-container__header">Educational Experience</h2>}
             <div className="experience">
                 <div className="experience__item">
                     <h3 className="experience__item-header">{schoolName}</h3>

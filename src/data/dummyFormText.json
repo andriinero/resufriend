@@ -3,7 +3,8 @@
         "firstName": "John",
         "lastName": "Johnson",
         "email": "john.johnson@example.com",
-        "phoneNumber": "555 - 5555 - 5555"
+        "phoneNumber": "555 - 5555 - 5555",
+        "location": "Berlin, DE"
     },
     {
         "schoolName": "University of Michigan",

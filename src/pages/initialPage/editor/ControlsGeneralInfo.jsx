@@ -1,30 +1,27 @@
+import { useState } from "react";
+import { InputPanelIcon } from "../../../components/editor/InputPanelIcon";
+import { InputPanelGeneral } from "../../../components/editor/InputPanelGeneral";
+
 export { ControlsGeneralInfo };
 
-function ControlsGeneralInfo({
-    firstName,
-    lastName,
-    email,
-    phoneNumber,
-    firstNameHandler,
-    lastNameHandler,
-    emailHandler,
-    phoneNumberHandler,
-}) {
+function ControlsGeneralInfo(props) {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    function toggleExpandHandler(e) {
+        console.log('ping');
+        setIsExpanded(!isExpanded);
+    }
+
     return (
-        <div className="container-panel">
-            <div className="container-panel-item">
-                <input value={firstName} onChange={firstNameHandler} id="name" type="text" placeholder="First Name" />
-                <input value={lastName} onChange={lastNameHandler} id="name" type="text" placeholder="Last Name" />
-                <label htmlFor="name">Full Name</label>
+        <div className="editor-section__container">
+            <div className="input-panel__header">
+                <div className="input-panel__title">
+                    <img className="input-panel__title-icon" src="../../../public/general-information.svg" alt="General Information Icon" />
+                    <h1 className="input-panel__title-h1">General Information</h1>
+                </div>
+                <InputPanelIcon isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
             </div>
-            <div className="container-controls">
-                <input value={email} onChange={emailHandler} id="email" type="text" placeholder="email@example.com" />
-                <label htmlFor="email">Email</label>
-            </div>
-            <div className="container-controls">
-                <input value={phoneNumber} onChange={phoneNumberHandler} id="phone-number" type="text" placeholder="555-5555-5555" />
-                <label htmlFor="phone-number">Phone Number</label>
-            </div>
+            <InputPanelGeneral isExpanded={isExpanded} {...props} />
         </div>
     );
 }

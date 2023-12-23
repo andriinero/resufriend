@@ -1,27 +1,27 @@
+import { useState } from "react";
+import { InputPanelEducational } from "../../../components/editor/InputPanelEducational";
+import { InputPanelIcon } from "../../../components/editor/InputPanelIcon";
+
 export { ControlsEducationalExperience };
 
-function ControlsEducationalExperience({
-    schoolName,
-    titleOfStudy,
-    dateOfStudy,
-    schoolNameHandler,
-    titleOfStudyHandler,
-    dateOfStudyHandler,
-}) {
+function ControlsEducationalExperience(props) {
+    const [isExpanded, setIsExpanded] = useState(true);
+
+    function toggleExpandHandler(e) {
+        console.log('ping');
+        setIsExpanded(!isExpanded);
+    }
+
     return (
-        <div className="container-panel">
-            <div className="container-panel-item">
-                <input value={schoolName} onChange={schoolNameHandler} id="school-name" type="text" placeholder="School Name" />
-                <label htmlFor="school-name">School Name</label>
+        <div className="editor-section__container">
+            <div className="input-panel__header">
+                <div className="input-panel__title">
+                    <img className="input-panel__title-icon" src="../../../public/educational-experience.svg" alt="General Information Icon" />
+                    <h1 className="input-panel__title-h1">Educational Experience</h1>
+                </div>
+                <InputPanelIcon isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
             </div>
-            <div className="container-controls">
-                <input value={titleOfStudy} onChange={titleOfStudyHandler} id="title-of-study" type="text" placeholder="Title" />
-                <label htmlFor="title-of-study">Title of Study</label>
-            </div>
-            <div className="container-controls">
-                <input value={dateOfStudy} onChange={dateOfStudyHandler} id="date-of-study" type="text" placeholder="01.01.2001-01.01.2002" />
-                <label htmlFor="date-of-study">Date of Study</label>
-            </div>
+            <InputPanelEducational isExpanded={isExpanded} {...props} />
         </div>
     );
 }

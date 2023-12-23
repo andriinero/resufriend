@@ -12,6 +12,7 @@ function InitialPage() {
         lastName: '',
         email: '',
         phoneNumber: '',
+        location: '',
     });
 
     const [educationalExperience, setEducationalExperience] = useState({
@@ -27,25 +28,12 @@ function InitialPage() {
         employmentPeriod: '',
     });
 
-    function resetStates() {
-        setGeneralInfo(getResetStateObject(generalInfo));
-        setEducationalExperience(getResetStateObject(educationalExperience));
-        setPracticalExperience(getResetStateObject(practicalExperience));
-    }
-
-    function setDummyState() {
-        const [dummyGeneralInfo, dummyEducationalExperience, dummyPracticalExperience] = getDummyState();
-
-        setGeneralInfo(dummyGeneralInfo);
-        setEducationalExperience(dummyEducationalExperience);
-        setPracticalExperience(dummyPracticalExperience);
-    }
-
     const generalHandlerContainer = {
         firstNameHandler: (e) => setGeneralInfo({ ...generalInfo, firstName: e.target.value }),
         lastNameHandler: (e) => setGeneralInfo({ ...generalInfo, lastName: e.target.value }),
         emailHandler: (e) => setGeneralInfo({ ...generalInfo, email: e.target.value }),
         phoneNumberHandler: (e) => setGeneralInfo({ ...generalInfo, phoneNumber: e.target.value }),
+        locationHandler: (e) => setGeneralInfo({ ...generalInfo, location: e.target.value }),
     };
 
     const educationalHandlerContainer = {
@@ -59,6 +47,20 @@ function InitialPage() {
         positionTitleHandler: (e) => setPracticalExperience({ ...practicalExperience, positionTitle: e.target.value }),
         mainResponsibilitiesHandler: (e) => setPracticalExperience({ ...practicalExperience, mainResponsibilities: e.target.value }),
         employmentPeriodHandler: (e) => setPracticalExperience({ ...practicalExperience, employmentPeriod: e.target.value })
+    }
+
+    function resetStates() {
+        setGeneralInfo(getResetStateObject(generalInfo));
+        setEducationalExperience(getResetStateObject(educationalExperience));
+        setPracticalExperience(getResetStateObject(practicalExperience));
+    }
+
+    function setDummyState() {
+        const [dummyGeneralInfo, dummyEducationalExperience, dummyPracticalExperience] = getDummyState();
+
+        setGeneralInfo(dummyGeneralInfo);
+        setEducationalExperience(dummyEducationalExperience);
+        setPracticalExperience(dummyPracticalExperience);
     }
 
     const appStateControlHandlers = {

@@ -1,5 +1,7 @@
 :root {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    --main-bg-clr: #f3f4f6;
+    --input-bg-clr: #ebebeb;
 }
 
 * {
@@ -9,14 +11,24 @@
 }
 
 input {
-    margin: 0.2em 1em 0.2em 1em;
-    padding: 0.5em;
-    border: 1px solid rgba(128, 128, 128, 1);
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1rem;
+    background-color: var(--input-bg-clr);
+    padding: 0.8rem;
+    border: 2px solid transparent;
     border-radius: 0.5rem;
-    box-shadow: 0 0 0.5em rgb(0 0 0 / 0.2);
+    transition: border 250ms, box-shadow 250ms;
+}
+
+input:focus {
+    box-shadow: 0 0 1em rgb(0 0 0 / 0.2);
+    border-color: #0077ff;
 }
 
 .main-page {
+    background-color: var(--main-bg-clr);
     display: grid;
     grid-template-columns: 1fr 1.5fr;
 }
