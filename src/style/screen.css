@@ -2,7 +2,7 @@
     --screen-header-bg-clr: #0e374e;
     --screen-header-txt-clr: #fff;
     --screen-header-icon-clr: invert(100%) sepia(100%) saturate(2%) hue-rotate(175deg) brightness(104%) contrast(100%);
-    --experience-header-bg-clr: rgba(14, 55, 78, .07);
+    --experience-header-bg-clr: #0e374e12;
     --experience-header-txt-clr: #0e374e;
 }
 

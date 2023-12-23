@@ -1,14 +1,23 @@
 import { useState } from "react";
 import { InputPanelEducational } from "../../../components/editor/InputPanelEducational";
 import { InputPanelExpand } from "../../../components/editor/InputPanelExpand";
+import { InputEducationalContainer } from "../../../components/editor/InputEducationalContainer";
 
 export { ControlsEducationalExperience };
 
-function ControlsEducationalExperience(props) {
+function ControlsEducationalExperience({
+    educationalExperienceChange,
+    educationalExperienceEdit,
+}) {
     const [isExpanded, setIsExpanded] = useState(true);
+    const [isEditMode, setIsEditMode] = useState(true);
 
     function toggleExpandHandler(e) {
         setIsExpanded(!isExpanded);
+    }
+
+    function toggleEditModeHandler(e) {
+        setIsEditMode(!isEditMode)
     }
 
     return (
@@ -20,7 +29,15 @@ function ControlsEducationalExperience(props) {
                 </div>
                 <InputPanelExpand isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
             </div>
-            <InputPanelEducational isExpanded={isExpanded} {...props} />
+            {isEditMode ?
+                (<InputPanelEducational
+                    isExpanded={isExpanded}
+                    toggleEditModeHandler={toggleEditModeHandler}
+                    {...educationalExperienceChange} />) :
+                (<InputEducationalContainer
+                    toggleEditModeHandler={toggleEditModeHandler}
+                    {...educationalExperienceEdit}
+                />)}
         </div>
     );
 }

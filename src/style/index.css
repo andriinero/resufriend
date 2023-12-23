@@ -27,6 +27,10 @@ input:focus {
     border-color: #0077ff;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .main-page {
     background-color: var(--main-bg-clr);
     display: grid;

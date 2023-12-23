@@ -32,7 +32,7 @@ function InputPanelPractical({
                 <label htmlFor="date-of-study">Employment Period</label>
                 <input value={employmentPeriod} onChange={employmentPeriodHandler} id="date-of-study" type="text" placeholder="01.01.2001-02.02.2005" />
             </div>
-            <button onClick={writePracticalExperienceHandler} type="button">Save</button>
+            <button className="input-panel__save-button" onClick={writePracticalExperienceHandler} type="button">Save</button>
         </div>
     );
 }

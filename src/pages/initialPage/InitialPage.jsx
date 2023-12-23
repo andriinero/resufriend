@@ -6,6 +6,7 @@ import { ScreenSection } from "./screen/ScreenSection";
 import getResetStateObject from "../../utils/getResetStateObject";
 import getDummyState from "../../utils/getDummyState";
 import validateExperienceData from "../../utils/validateExperienceData";
+import idGenerator from "../../utils/idGenerator";
 
 function InitialPage() {
     // Current user input data
@@ -43,6 +44,15 @@ function InitialPage() {
         resetEducationalExperience();
     }
 
+    function deleteEducationalHandler(schoolName) {
+        console.log('edu deleted');
+        const newContainer = educationalExperienceContainer.filter((experience) => {
+            return experience.schoolName !== schoolName
+        });
+
+        setEducationalExperienceContainer(newContainer);
+    }
+
     const [practicalExperienceContainer, setPracticalExperienceContainer] = useState([]);
 
     function writePracticalExperienceHandler() {
@@ -53,6 +63,14 @@ function InitialPage() {
         );
 
         resetPracticalExperience();
+    }
+
+    function deletePracticalHandler(companyName) {
+        const newContainer = practicalExperienceContainer.filter((experience) => {
+            return experience.companyName !== companyName;
+        });
+
+        setPracticalExperienceContainer(newContainer);
     }
 
     const generalHandlerContainer = {
@@ -80,6 +98,9 @@ function InitialPage() {
         setGeneralInfo(getResetStateObject(generalInfo));
         setEducationalExperience(getResetStateObject(educationalExperience));
         setPracticalExperience(getResetStateObject(practicalExperience));
+
+        setEducationalExperienceContainer([]);
+        setPracticalExperienceContainer([]);
     }
 
     function resetEducationalExperience() {
@@ -110,6 +131,8 @@ function InitialPage() {
                 generalInfoChange={{ generalInfo, generalHandlerContainer }}
                 educationalExperienceChange={{ educationalExperience, educationalHandlerContainer, writeEducationalExperienceHandler }}
                 practicalExperienceChange={{ practicalExperience, practicalHandlerContainer, writePracticalExperienceHandler }}
+                educationalExperienceEdit={{ educationalExperienceContainer, deleteEducationalHandler }}
+                practicalExperienceEdit={{ practicalExperienceContainer, deletePracticalHandler }}
             />
             <ScreenSection
                 generalInfo={generalInfo}

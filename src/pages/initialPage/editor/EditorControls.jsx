@@ -8,6 +8,8 @@ function EditorControls({
     generalInfoChange,
     educationalExperienceChange,
     practicalExperienceChange,
+    educationalExperienceEdit,
+    practicalExperienceEdit,
 }) {
     return (
         <>
@@ -16,14 +18,14 @@ function EditorControls({
                 {...generalInfoChange.generalHandlerContainer}
             />
             <ControlsEducationalExperience
-                {...educationalExperienceChange.educationalExperience}
-                {...educationalExperienceChange.educationalHandlerContainer}
-                writeEducationalExperienceHandler={educationalExperienceChange.writeEducationalExperienceHandler}
+                educationalExperienceChange={educationalExperienceChange}
+                educationalExperienceEdit={educationalExperienceEdit}
             />
             <ControlsPracticalExperience
                 {...practicalExperienceChange.practicalExperience}
                 {...practicalExperienceChange.practicalHandlerContainer}
                 writePracticalExperienceHandler={practicalExperienceChange.writePracticalExperienceHandler}
+                practicalExperienceEdit={practicalExperienceEdit}
             />
         </>
     );

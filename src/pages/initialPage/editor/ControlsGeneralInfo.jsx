@@ -5,7 +5,7 @@ import { InputPanelGeneral } from "../../../components/editor/InputPanelGeneral"
 export { ControlsGeneralInfo };
 
 function ControlsGeneralInfo(props) {
-    const [isExpanded, setIsExpanded] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(true);
 
     function toggleExpandHandler(e) {
         console.log('ping');
