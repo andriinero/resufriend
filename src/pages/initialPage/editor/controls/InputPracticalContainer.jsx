@@ -15,9 +15,11 @@ function InputPracticalContainer({
         <div className={expandedClass}>
             <div className="editor-container">
                 {practicalExperienceContainer.map((experience) => {
-                    return <PracticalItem key={getExperienceItemHash(experience)}
+                    return <PracticalItem
+                        key={getExperienceItemHash(experience)}
+                        id={experience.id}
+                        companyName={experience.companyName}
                         deletePracticalHandler={deletePracticalHandler}
-                        {...experience}
                     />
                 })}
             </div>

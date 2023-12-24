@@ -1,5 +1,4 @@
 import { EducationalItem } from "../../../../components/editor/EducationalItem";
-import getExperienceItemHash from "../../../../utils/getExperienceItemHash";
 
 export { InputEducationalContainer };
 
@@ -15,9 +14,12 @@ function InputEducationalContainer({
         <div className={expandedClass}>
             <div className="editor-container">
                 {educationalExperienceContainer.map((experience) => {
-                    return <EducationalItem key={getExperienceItemHash(experience)}
+                    console.log(experience.id);
+                    return <EducationalItem 
+                        key={experience.id}
+                        id={experience.id}
+                        schoolName={experience.schoolName}
                         deleteEducationalHandler={deleteEducationalHandler}
-                        {...experience}
                     />
                 })}
             </div>

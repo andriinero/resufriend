@@ -7,6 +7,7 @@ import { ScreenSection } from "./screen/ScreenSection";
 import getResetStateObject from "../../utils/getResetStateObject";
 import getDummyState from "../../utils/getDummyState";
 import validateExperienceData from "../../utils/validateExperienceData";
+import getExperienceItemHash from "../../utils/getExperienceItemHash";
 
 function InitialPage() {
     // Current user input data
@@ -38,15 +39,19 @@ function InitialPage() {
         if (!validateExperienceData(educationalExperience)) return;
 
         setEducationalExperienceContainer(
-            [...educationalExperienceContainer, educationalExperience]
+            [...educationalExperienceContainer,
+            {
+                ...educationalExperience,
+                id: getExperienceItemHash(educationalExperience)
+            }]
         );
 
         resetEducationalExperience();
     }
 
-    function deleteEducationalHandler(schoolName) {
+    function deleteEducationalHandler(id) {
         const newContainer = educationalExperienceContainer.filter((experience) => {
-            return experience.schoolName !== schoolName
+            return experience.id !== id;
         });
 
         setEducationalExperienceContainer(newContainer);
@@ -58,15 +63,22 @@ function InitialPage() {
         if (!validateExperienceData(practicalExperience)) return;
 
         setPracticalExperienceContainer(
-            [...practicalExperienceContainer, practicalExperience]
+            [...practicalExperienceContainer,
+            {
+                ...practicalExperience,
+                id: getExperienceItemHash(practicalExperience)
+            }]
         );
 
         resetPracticalExperience();
     }
 
-    function deletePracticalHandler(companyName) {
+    function deletePracticalHandler(id) {
+        
         const newContainer = practicalExperienceContainer.filter((experience) => {
-            return experience.companyName !== companyName;
+            console.log("ORIGINAL =" + experience.id);
+            console.log("ARGUMENT =" + id);
+            return experience.id !== id;
         });
 
         setPracticalExperienceContainer(newContainer);
@@ -121,9 +133,9 @@ function InitialPage() {
     function printDocument() {
         try {
             document.execCommand('print', false, null)
-          } catch {
+        } catch {
             window.print()
-          }
+        }
     }
 
     const appStateControlHandlers = {

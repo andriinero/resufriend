@@ -2,8 +2,7 @@ export { EducationalItem };
 
 function EducationalItem({
     schoolName,
-    titleOfStudy,
-    dateOfStudy,
+    id,
     deleteEducationalHandler,
 }) {
     return (
@@ -11,7 +10,7 @@ function EducationalItem({
             <h3 className="">
                 {schoolName}
             </h3>
-            <img className="editor-container__button control-icon" onClick={() => { deleteEducationalHandler(schoolName) }} src="/delete.svg" alt="Delete Icon" />
+            <img className="editor-container__button control-icon" onClick={() => { deleteEducationalHandler(id) }} src="/delete.svg" alt="Delete Icon" />
         </div>
     );
 }
