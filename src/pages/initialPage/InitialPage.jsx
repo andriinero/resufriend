@@ -118,9 +118,14 @@ function InitialPage() {
         setPracticalExperience(dummyPracticalExperience);
     }
 
+    function printDocument() {
+        window.print();
+    }
+
     const appStateControlHandlers = {
         resetStates,
-        setDummyState
+        setDummyState,
+        printDocument,
     }
 
     return (

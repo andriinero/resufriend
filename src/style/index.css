@@ -62,12 +62,14 @@ button:hover {
     }
 
     .controls-section__controls {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .controls-section__icon {
-        width: 28px;
+        width: 36px;
     }
 
     .editor-section {
@@ -151,7 +153,6 @@ button:hover {
     }
 }
 
-/* @media (max-width: 2000px) { */
 @media print {
     .main-page {
         grid-template-columns: 1fr;
@@ -185,6 +186,10 @@ button:hover {
 
     .screen-header__full-name {
         font-size: 2.1rem;
+    }
+
+    .screen-header__misc-container {
+        flex-direction: row;
     }
 
     .screen-header__misc-item {
