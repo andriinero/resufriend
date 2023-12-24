@@ -45,7 +45,6 @@ function InitialPage() {
     }
 
     function deleteEducationalHandler(schoolName) {
-        console.log('edu deleted');
         const newContainer = educationalExperienceContainer.filter((experience) => {
             return experience.schoolName !== schoolName
         });

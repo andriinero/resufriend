@@ -1,15 +1,23 @@
 import { useState } from "react";
 import { InputPanelExpand } from "../../../../components/editor/InputPanelExpand";
 import { InputPanelPractical } from "./InputPanelPractical";
+import { InputPracticalContainer } from "./InputPracticalContainer";
 
 export { ControlsPracticalExperience };
 
-function ControlsPracticalExperience(props) {
+function ControlsPracticalExperience({
+    practicalExperienceChange,
+    practicalExperienceEdit,
+}) {
     const [isExpanded, setIsExpanded] = useState(true);
+    const [isEditMode, setIsEditMode] = useState(true);
 
     function toggleExpandHandler(e) {
-        console.log('ping');
         setIsExpanded(!isExpanded);
+    }
+
+    function toggleEditModeHandler(e) {
+        setIsEditMode(!isEditMode)
     }
 
     return (
@@ -21,7 +29,16 @@ function ControlsPracticalExperience(props) {
                 </div>
                 <InputPanelExpand isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
             </div>
-            <InputPanelPractical isExpanded={isExpanded} {...props} />
+            {isEditMode ?
+                (<InputPanelPractical
+                    isExpanded={isExpanded}
+                    toggleEditModeHandler={toggleEditModeHandler}
+                    {...practicalExperienceChange} />) :
+                (<InputPracticalContainer
+                    isExpanded={isExpanded}
+                    toggleEditModeHandler={toggleEditModeHandler}
+                    {...practicalExperienceEdit}
+                />)}
         </div>
     );
 }

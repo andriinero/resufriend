@@ -22,9 +22,7 @@ function EditorControls({
                 educationalExperienceEdit={educationalExperienceEdit}
             />
             <ControlsPracticalExperience
-                {...practicalExperienceChange.practicalExperience}
-                {...practicalExperienceChange.practicalHandlerContainer}
-                writePracticalExperienceHandler={practicalExperienceChange.writePracticalExperienceHandler}
+                practicalExperienceChange={practicalExperienceChange}
                 practicalExperienceEdit={practicalExperienceEdit}
             />
         </>

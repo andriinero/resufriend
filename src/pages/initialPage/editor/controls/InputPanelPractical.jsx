@@ -2,37 +2,43 @@ export { InputPanelPractical };
 
 function InputPanelPractical({
     isExpanded,
-    companyName,
-    positionTitle,
-    mainResponsibilities,
-    employmentPeriod,
-    companyNameHandler,
-    positionTitleHandler,
-    mainResponsibilitiesHandler,
-    employmentPeriodHandler,
+    practicalExperience,
+    practicalHandlerContainer,
     writePracticalExperienceHandler,
+    toggleEditModeHandler,
 }) {
     const expandedClass = isExpanded ? 'input-panel' : 'input-panel--hidden';
 
     return (
         <div className={expandedClass}>
             <div className="input-panel__item">
-                <label htmlFor="company-name">Company Name</label>
-                <input value={companyName} onChange={companyNameHandler} id="company-name" type="text" placeholder="Company Name" />
+                <label className="input-panel__label" htmlFor="school-name">Company Name</label>
+                <div className="input-panel__field">
+                    <input value={practicalExperience.companyName} onChange={practicalHandlerContainer.companyNameHandler} id="school-name" type="text" placeholder="Company Name" />
+                </div>
             </div>
             <div className="input-panel__item">
-                <label htmlFor="position-title">Position Title</label>
-                <input value={positionTitle} onChange={positionTitleHandler} id="position-title" type="text" placeholder="Title" />
+                <label className="input-panel__label" htmlFor="title-of-study">Position Title</label>
+                <div className="input-panel__field">
+                    <input value={practicalExperience.positionTitle} onChange={practicalHandlerContainer.positionTitleHandler} id="title-of-study" type="text" placeholder="Title" />
+                </div>
             </div>
             <div className="input-panel__item">
-                <label htmlFor="main-responsibilities">Main Responsibilities</label>
-                <input value={mainResponsibilities} onChange={mainResponsibilitiesHandler} id="main-responsibilities" type="text" placeholder="Main Responsibilities" />
+                <label className="input-panel__label" htmlFor="date-of-study">Main Responsibilities</label>
+                <div className="input-panel__field">
+                    <input value={practicalExperience.mainResponsibilities} onChange={practicalHandlerContainer.mainResponsibilitiesHandler} id="date-of-study" type="text" placeholder="Responsibilities" />
+                </div>
             </div>
             <div className="input-panel__item">
-                <label htmlFor="date-of-study">Employment Period</label>
-                <input value={employmentPeriod} onChange={employmentPeriodHandler} id="date-of-study" type="text" placeholder="01.01.2001-02.02.2005" />
+                <label className="input-panel__label" htmlFor="date-of-study">Employment Period</label>
+                <div className="input-panel__field">
+                    <input value={practicalExperience.employmentPeriod} onChange={practicalHandlerContainer.employmentPeriodHandler} id="date-of-study" type="text" placeholder="01.01.2001 - 01.01.2002" />
+                </div>
             </div>
-            <button className="input-panel__save-button" onClick={writePracticalExperienceHandler} type="button">Save</button>
+            <div className="input-panel__controls">
+                <button className="input-panel__button" onClick={toggleEditModeHandler} type="button">Cancel</button>
+                <button className="input-panel__button" onClick={writePracticalExperienceHandler} type="button">Save</button>
+            </div>
         </div>
     );
 }

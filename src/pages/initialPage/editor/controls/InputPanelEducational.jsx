@@ -27,11 +27,13 @@ function InputPanelEducational({
             <div className="input-panel__item">
                 <label className="input-panel__label" htmlFor="date-of-study">Date of Study</label>
                 <div className="input-panel__field">
-                    <input value={educationalExperience.dateOfStudy} onChange={educationalHandlerContainer.dateOfStudyHandler} id="date-of-study" type="text" placeholder="01.01.2001-01.01.2002" />
+                    <input value={educationalExperience.dateOfStudy} onChange={educationalHandlerContainer.dateOfStudyHandler} id="date-of-study" type="text" placeholder="01.01.2001 - 01.01.2002" />
                 </div>
             </div>
-            <button className="input-panel__button" onClick={writeEducationalExperienceHandler} type="button">Save</button>
-            <button className="input-panel__button" onClick={toggleEditModeHandler} type="button">Cancel</button>
+            <div className="input-panel__controls">
+                <button className="input-panel__button" onClick={toggleEditModeHandler} type="button">Cancel</button>
+                <button className="input-panel__button" onClick={writeEducationalExperienceHandler} type="button">Save</button>
+            </div>
         </div>
     );
 }

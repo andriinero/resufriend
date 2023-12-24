@@ -7,11 +7,11 @@ function EducationalItem({
     deleteEducationalHandler,
 }) {
     return (
-        <div className="input-panel__item">
-            <div>
+        <div className="editor-container__item">
+            <h3 className="">
                 {schoolName}
-            </div>
-            <img className="input-panel__icon control-icon" onClick={() => { deleteEducationalHandler(schoolName) }} src="../../public/delete.svg" alt="Delete Icon" />
+            </h3>
+            <img className="editor-container__button control-icon" onClick={() => { deleteEducationalHandler(schoolName) }} src="../../public/delete.svg" alt="Delete Icon" />
         </div>
     );
 }

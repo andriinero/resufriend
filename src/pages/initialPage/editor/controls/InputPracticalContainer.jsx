@@ -1,12 +1,12 @@
-import { EducationalItem } from "../../../../components/editor/EducationalItem";
+import { PracticalItem } from "../../../../components/editor/PracticalItem";
 import getExperienceItemHash from "../../../../utils/getExperienceItemHash";
 
-export { InputEducationalContainer };
+export { InputPracticalContainer };
 
-function InputEducationalContainer({
+function InputPracticalContainer({
     isExpanded,
-    educationalExperienceContainer,
-    deleteEducationalHandler,
+    practicalExperienceContainer,
+    deletePracticalHandler,
     toggleEditModeHandler,
 }) {
     const expandedClass = isExpanded ? 'input-panel' : 'input-panel--hidden';
@@ -14,9 +14,9 @@ function InputEducationalContainer({
     return (
         <div className={expandedClass}>
             <div className="editor-container">
-                {educationalExperienceContainer.map((experience) => {
-                    return <EducationalItem key={getExperienceItemHash(experience)}
-                        deleteEducationalHandler={deleteEducationalHandler}
+                {practicalExperienceContainer.map((experience) => {
+                    return <PracticalItem key={getExperienceItemHash(experience)}
+                        deletePracticalHandler={deletePracticalHandler}
                         {...experience}
                     />
                 })}

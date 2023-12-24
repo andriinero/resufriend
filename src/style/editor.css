@@ -57,6 +57,17 @@
     transform: translateY(-10px);
 }
 
+.input-panel__icon {
+    width: 32px;
+    height: auto;
+    filter: invert(28%) sepia(8%) saturate(24%) hue-rotate(315deg) brightness(93%) contrast(79%);
+    transition: filter 200ms;
+}
+
+.input-panel__icon:hover {
+    filter: none;
+}
+
 .input-panel__title {
     display: flex;
     align-items: center;
@@ -87,6 +98,7 @@
 .input-panel__item {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1rem;
 }
 
@@ -101,14 +113,21 @@
     gap: 1rem;
 }
 
+.input-panel__controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
 .input-panel__button {
-    font-size: 1rem;
-    padding: 0.6em;
+    width: 100px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem 0.6rem 1.2rem;
     color: var(--control-btn-txt-clr);
     background-color: var(--control-btn-bg-clr);
-    max-width: 80px;
     border: 1px solid transparent;
-    border-radius: 4px;
+    border-radius: 1.2rem;
     transition: background-color 150ms, border-color 150ms;
 }
 
@@ -116,6 +135,29 @@
     color: var(--control-btn-bg-clr);
     background-color: var(--control-btn-txt-clr);
     border-color: var(--control-btn-bg-clr);
+}
+
+.input-panel__button--edit {
+    margin-top: 1rem;
+    align-self: center;
+}
+
+.editor-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.editor-container__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editor-container__button {
+    width: 32px;
+    filter: invert(15%) sepia(54%) saturate(6129%) hue-rotate(354deg) brightness(87%) contrast(87%);
 }
 
 @starting-style {
