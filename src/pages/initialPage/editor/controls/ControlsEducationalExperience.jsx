@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { InputPanelEducational } from "../../../components/editor/InputPanelEducational";
-import { InputPanelExpand } from "../../../components/editor/InputPanelExpand";
-import { InputEducationalContainer } from "../../../components/editor/InputEducationalContainer";
+import { InputPanelEducational } from "./InputPanelEducational";
+import { InputPanelExpand } from "../../../../components/editor/InputPanelExpand";
+import { InputEducationalContainer } from "./InputEducationalContainer";
 
 export { ControlsEducationalExperience };
 
@@ -35,6 +35,7 @@ function ControlsEducationalExperience({
                     toggleEditModeHandler={toggleEditModeHandler}
                     {...educationalExperienceChange} />) :
                 (<InputEducationalContainer
+                    isExpanded={isExpanded}
                     toggleEditModeHandler={toggleEditModeHandler}
                     {...educationalExperienceEdit}
                 />)}

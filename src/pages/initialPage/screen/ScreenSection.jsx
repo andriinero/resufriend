@@ -2,9 +2,9 @@ export { ScreenSection };
 
 import '../../../style/screen.css';
 
-import { ScreenEducationalExperience } from "./ScreenEducationalExperience";
-import { ScreenGeneralInfo } from "./ScreenGeneralInfo";
-import { ScreenPracticalExperience } from "./ScreenPracticalExperience";
+import { ScreenEducationalExperience } from "./cv-page/ScreenEducationalExperience";
+import { ScreenGeneralInfo } from "./cv-page/ScreenGeneralInfo";
+import { ScreenPracticalExperience } from "./cv-page/ScreenPracticalExperience";
 
 function ScreenSection({
     generalInfo,

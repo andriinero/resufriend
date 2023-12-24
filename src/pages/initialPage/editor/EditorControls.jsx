@@ -1,8 +1,8 @@
 export { EditorControls };
 
-import { ControlsGeneralInfo } from "./ControlsGeneralInfo";
-import { ControlsEducationalExperience } from "./ControlsEducationalExperience";
-import { ControlsPracticalExperience } from "./ControlsPracticalExperience";
+import { ControlsGeneralInfo } from "./controls/ControlsGeneralInfo";
+import { ControlsEducationalExperience } from "./controls/ControlsEducationalExperience";
+import { ControlsPracticalExperience } from "./controls/ControlsPracticalExperience";
 
 function EditorControls({
     generalInfoChange,

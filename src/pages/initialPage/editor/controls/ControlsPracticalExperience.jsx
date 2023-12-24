@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { InputPanelExpand } from "../../../components/editor/InputPanelExpand";
-import { InputPanelPractical } from "../../../components/editor/InputPanelPractical";
+import { InputPanelExpand } from "../../../../components/editor/InputPanelExpand";
+import { InputPanelPractical } from "./InputPanelPractical";
 
 export { ControlsPracticalExperience };
 

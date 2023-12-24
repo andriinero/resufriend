@@ -1,4 +1,4 @@
-import { ExperienceItemEducational } from "../../../components/editor/ExperienceItemEducational";
+import { ExperienceItemEducational } from "../../../../components/editor/ExperienceItemEducational";
 
 export { ScreenEducationalExperience };
 

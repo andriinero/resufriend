@@ -1,4 +1,4 @@
-import { ExperienceItemPractical } from "../../../components/editor/ExperienceItemPractical";
+import { ExperienceItemPractical } from "../../../../components/editor/ExperienceItemPractical";
 
 export { ScreenPracticalExperience };
 
