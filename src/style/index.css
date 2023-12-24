@@ -32,9 +32,11 @@ button:hover {
 }
 
 .main-page {
+    min-height: 100vh;
     background-color: var(--main-bg-clr);
     display: grid;
-    grid-template-columns: 0.5fr minmax(400px, 2fr) minmax(700px, 4fr);
+    justify-content: center;
+    grid-template-columns: minmax(100px, 150px) minmax(400px, 700px) minmax(700px, 1000px);
 }
 
 @page {

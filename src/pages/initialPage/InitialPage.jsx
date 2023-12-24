@@ -119,7 +119,11 @@ function InitialPage() {
     }
 
     function printDocument() {
-        window.print();
+        try {
+            document.execCommand('print', false, null)
+          } catch {
+            window.print()
+          }
     }
 
     const appStateControlHandlers = {
