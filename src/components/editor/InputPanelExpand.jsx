@@ -9,6 +9,6 @@ function InputPanelExpand({
     'input-panel__arrow control-icon';
 
     return (
-        <img onClick={toggleExpandHandler} className={expandClass} src="../../../public/chevron-down.svg" alt="Expand Icon" />
+        <img onClick={toggleExpandHandler} className={expandClass} src="/chevron-down.svg" alt="Expand Icon" />
     );
 }

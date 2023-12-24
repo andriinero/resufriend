@@ -16,7 +16,7 @@ function ControlsGeneralInfo(props) {
         <div className="editor-section__container">
             <div className="input-panel__header">
                 <div className="input-panel__title">
-                    <img className="input-panel__title-icon" src="../../../public/general-information.svg" alt="General Information Icon" />
+                    <img className="input-panel__title-icon" src="./general-information.svg" alt="General Information Icon" />
                     <h1 className="input-panel__title-h1">General Information</h1>
                 </div>
                 <InputPanelExpand isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />

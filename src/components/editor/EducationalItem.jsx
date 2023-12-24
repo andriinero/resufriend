@@ -11,7 +11,7 @@ function EducationalItem({
             <h3 className="">
                 {schoolName}
             </h3>
-            <img className="editor-container__button control-icon" onClick={() => { deleteEducationalHandler(schoolName) }} src="../../public/delete.svg" alt="Delete Icon" />
+            <img className="editor-container__button control-icon" onClick={() => { deleteEducationalHandler(schoolName) }} src="/delete.svg" alt="Delete Icon" />
         </div>
     );
 }

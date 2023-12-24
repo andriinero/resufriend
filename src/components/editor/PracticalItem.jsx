@@ -12,7 +12,7 @@ function PracticalItem({
             <h3 className="">
                 {companyName}
             </h3>
-            <img className="editor-container__button control-icon" onClick={() => { deletePracticalHandler(companyName) }} src="../../public/delete.svg" alt="Delete Icon" />
+            <img className="editor-container__button control-icon" onClick={() => { deletePracticalHandler(companyName) }} src="/delete.svg" alt="Delete Icon" />
         </div>
     );
 }

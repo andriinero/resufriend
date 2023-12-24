@@ -62,10 +62,8 @@ button:hover {
     }
 
     .controls-section__controls {
-        padding-left: 1.2rem;
-        padding-right: 1.2rem;
-        flex-direction: row;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .controls-section__icon {

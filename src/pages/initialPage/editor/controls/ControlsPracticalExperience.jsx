@@ -24,7 +24,7 @@ function ControlsPracticalExperience({
         <div className="editor-section__container">
             <div className="input-panel__header">
                 <div className="input-panel__title">
-                    <img className="input-panel__title-icon" src="../../../public/practical-experience.svg" alt="General Information Icon" />
+                    <img className="input-panel__title-icon" src="/practical-experience.svg" alt="General Information Icon" />
                     <h1 className="input-panel__title-h1">Practical Experience</h1>
                 </div>
                 <InputPanelExpand isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
