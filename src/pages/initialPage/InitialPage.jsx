@@ -1,12 +1,12 @@
 export { InitialPage };
 
 import { useState } from "react";
+import { ControlsSection } from "./controls/ControlsSection";
 import { EditorSection } from "./editor/EditorSection";
 import { ScreenSection } from "./screen/ScreenSection";
 import getResetStateObject from "../../utils/getResetStateObject";
 import getDummyState from "../../utils/getDummyState";
 import validateExperienceData from "../../utils/validateExperienceData";
-import idGenerator from "../../utils/idGenerator";
 
 function InitialPage() {
     // Current user input data
@@ -125,6 +125,7 @@ function InitialPage() {
 
     return (
         <main className="main-page">
+            <ControlsSection {...appStateControlHandlers} />
             <EditorSection
                 appStateControlHandlers={appStateControlHandlers}
                 generalInfoChange={{ generalInfo, generalHandlerContainer }}

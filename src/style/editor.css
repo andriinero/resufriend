@@ -13,8 +13,8 @@
 .editor-section__container {
     max-width: 100%;
     padding: 2em;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 1.5em rgb(0 0 0 / 0.2);
+    border-radius: 1rem;
+    box-shadow: 0 0 1em rgb(0 0 0 / 0.15);
 
     display: flex;
     flex-direction: column;
@@ -23,7 +23,6 @@
 
 .editor-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -91,8 +90,8 @@
 
 .input-panel__header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 .input-panel__item {
@@ -157,7 +156,6 @@
 
 .editor-container__button {
     width: 32px;
-    filter: invert(15%) sepia(54%) saturate(6129%) hue-rotate(354deg) brightness(87%) contrast(87%);
 }
 
 @starting-style {

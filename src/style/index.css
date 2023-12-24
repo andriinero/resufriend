@@ -34,7 +34,7 @@ button:hover {
 .main-page {
     background-color: var(--main-bg-clr);
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 0.5fr minmax(400px, 2fr) minmax(700px, 4fr);
 }
 
 @media print {
