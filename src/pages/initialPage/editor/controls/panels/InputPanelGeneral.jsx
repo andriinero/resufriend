@@ -20,7 +20,7 @@ function InputPanelGeneral({
             </div>
             <InputItem
                 id="email"
-                placeholder="Email"
+                placeholder="email@example.com"
                 value={generalInfo.email}
                 changeHandler={generalHandlerContainer.emailHandler}
             >
@@ -28,7 +28,7 @@ function InputPanelGeneral({
             </InputItem>
             <InputItem
                 id="phone-number"
-                placeholder="555-5555-5555"
+                placeholder="555 - 5555 - 5555"
                 value={generalInfo.phoneNumber}
                 changeHandler={generalHandlerContainer.phoneNumberHandler}
             >

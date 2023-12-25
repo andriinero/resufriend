@@ -14,36 +14,36 @@ function InputPanelPractical({
     return (
         <div className={expandedClass}>
             <InputItem
-                id="school-name"
-                placeholder="School Name"
+                id="company-name"
+                placeholder="Name"
                 value={practicalExperience.name}
                 changeHandler={practicalHandlerContainer.nameHandler}
             >
-                <span>School Name</span>
+                <span>Company Name</span>
             </InputItem>
             <InputItem
-                id="title-of-study"
-                placeholder="Title of Study"
+                id="position-title"
+                placeholder="Title"
                 value={practicalExperience.title}
                 changeHandler={practicalHandlerContainer.titleHandler}
             >
-                <span>Title of Study</span>
+                <span>Position Title</span>
             </InputItem>
             <InputItem
                 id="main-responsibilities"
-                placeholder="Main Responsibilities"
+                placeholder="Responsibilities"
                 value={practicalExperience.mainResponsibilities}
                 changeHandler={practicalHandlerContainer.mainResponsibilitiesHandler}
             >
                 <span>Main Responsibilities</span>
             </InputItem>
             <InputItem
-                id="date-of-study"
+                id="period-of-employment"
                 placeholder="01.01.2001 - 01.01.2002"
                 value={practicalExperience.period}
                 changeHandler={practicalHandlerContainer.periodHandler}
             >
-                <span>Date of Study</span>
+                <span>Period of Employment</span>
             </InputItem>
             <div className="input-panel__controls">
                 <button className="input-panel__button" onClick={toggleEditModeHandler} type="button">Cancel</button>

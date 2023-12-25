@@ -24,6 +24,14 @@
     gap: 2rem;
 }
 
+.controls-section__controls-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .controls-section__icon {
     width: 40px;
     height: auto;
@@ -35,15 +43,8 @@
 }
 
 .controls-section__icon--pressed {
+    transition: transform 100ms;
     transform: scale(0.9);
-}
-
-.controls-section__controls-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
 }
 
 .controls-section__label {

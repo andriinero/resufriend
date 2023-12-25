@@ -15,7 +15,7 @@ function InputPanelEducational({
         <div className={expandedClass}>
             <InputItem
                 id="school-name"
-                placeholder="School Name"
+                placeholder="Name"
                 value={educationalExperience.name}
                 changeHandler={educationalHandlerContainer.nameHandler}
             >
@@ -23,7 +23,7 @@ function InputPanelEducational({
             </InputItem>
             <InputItem
                 id="title-of-study"
-                placeholder="Title of Study"
+                placeholder="Title"
                 value={educationalExperience.title}
                 changeHandler={educationalHandlerContainer.titleHandler}
             >
