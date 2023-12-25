@@ -148,6 +148,10 @@
     gap: 1rem;
 }
 
+.editor-container__status {
+    text-align: center;
+}
+
 .editor-container__item {
     display: flex;
     justify-content: space-between;

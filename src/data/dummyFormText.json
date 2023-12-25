@@ -7,14 +7,14 @@
         "location": "Berlin, DE"
     },
     {
-        "schoolName": "University of Michigan",
-        "titleOfStudy": "Bachelor of Computer Science",
-        "dateOfStudy": "09.21.2019 - 05.31.2022"
+        "name": "University of Michigan",
+        "title": "Bachelor of Computer Science",
+        "period": "09.21.2019 - 05.31.2022"
     },
     {
-        "companyName": "StartUp.org",
-        "positionTitle": "Junior Software Developer",
+        "name": "StartUp.org",
+        "title": "Junior Software Developer",
         "mainResponsibilities": "In my capacity as a React tester, I have honed my skills in devising comprehensive test plans that systematically validate every aspect of our applications. My strategic approach encompasses meticulous testing of functional components and intricate UI interactions, ensuring a superior user experience.",
-        "employmentPeriod": "06.21.2021 - 09.01.2021"
+        "period": "06.21.2021 - 09.01.2021"
     }
 ]

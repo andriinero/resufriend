@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { InputPanelEducational } from "./input/InputPanelEducational";
+import { InputPanelEducational } from "./panels/InputPanelEducational";
 import { ExpandArrow } from "./ExpandArrow";
-import { PanelList } from "./input/PanelList";
+import { PanelList } from "./panels/PanelList";
 
 export { ControlsEducationalExperience };
 

@@ -14,8 +14,7 @@ function EditorControls({
     return (
         <>
             <ControlsGeneralInfo
-                {...generalInfoChange.generalInfo}
-                {...generalInfoChange.generalHandlerContainer}
+                {...generalInfoChange}
             />
             <ControlsEducationalExperience
                 educationalExperienceChange={educationalExperienceChange}

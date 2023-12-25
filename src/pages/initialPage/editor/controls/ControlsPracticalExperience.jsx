@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ExpandArrow } from "./ExpandArrow";
-import { InputPanelPractical } from "./input/InputPanelPractical";
-import { PanelList } from "./input/PanelList";
+import { InputPanelPractical } from "./panels/InputPanelPractical";
+import { PanelList } from "./panels/PanelList";
 
 export { ControlsPracticalExperience };
 
