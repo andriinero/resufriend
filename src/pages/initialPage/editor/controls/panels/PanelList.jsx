@@ -15,7 +15,7 @@ function PanelList({
     return (
         <div className={expandedClass}>
             <div className="editor-container">
-                {reversedExperienceContainer.length === 0 && <p className="editor-container__status"><em>Click &quot;Edit&quot; to add new item</em></p>}
+                {reversedExperienceContainer.length === 0 && <p className="editor-container__status"><em>Click &quot;Add&quot; to add new item</em></p>}
                 {reversedExperienceContainer.map((experience) => {
                     return <PanelListItem
                         key={experience.id}
@@ -25,7 +25,7 @@ function PanelList({
                     />
                 })}
             </div>
-            <button className="input-panel__button input-panel__button--edit" onClick={toggleEditModeHandler} type="button">Edit</button>
+            <button className="input-panel__button input-panel__button--edit" onClick={toggleEditModeHandler} type="button">Add</button>
         </div>
     );
 }

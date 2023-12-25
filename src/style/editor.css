@@ -149,7 +149,10 @@
 }
 
 .editor-container__status {
+    padding: 0.4rem;
     text-align: center;
+    transform-origin: top;
+    transition: all 400ms;
 }
 
 .editor-container__item {
@@ -164,6 +167,11 @@
 
 @starting-style {
     .input-panel {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    .editor-container__status {
         opacity: 0;
         transform: translateY(-10px);
     }
