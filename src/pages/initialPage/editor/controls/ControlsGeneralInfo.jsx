@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { InputPanelExpand } from "../../../../components/editor/InputPanelExpand";
-import { InputPanelGeneral } from "./InputPanelGeneral";
+import { ExpandArrow } from "./ExpandArrow";
+import { InputPanelGeneral } from "./input/InputPanelGeneral";
 
 export { ControlsGeneralInfo };
 
@@ -8,7 +8,6 @@ function ControlsGeneralInfo(props) {
     const [isExpanded, setIsExpanded] = useState(true);
 
     function toggleExpandHandler(e) {
-        console.log('ping');
         setIsExpanded(!isExpanded);
     }
 
@@ -19,7 +18,7 @@ function ControlsGeneralInfo(props) {
                     <img className="input-panel__title-icon" src="./general-information.svg" alt="General Information Icon" />
                     <h1 className="input-panel__title-h1">General Information</h1>
                 </div>
-                <InputPanelExpand isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
+                <ExpandArrow isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
             </div>
             <InputPanelGeneral isExpanded={isExpanded} {...props} />
         </div>

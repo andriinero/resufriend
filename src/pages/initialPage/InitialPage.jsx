@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ControlsSection } from "./controls/ControlsSection";
 import { EditorSection } from "./editor/EditorSection";
 import { ScreenSection } from "./screen/ScreenSection";
-import getResetStateObject from "../../utils/getResetStateObject";
+import getResetExperienceObject from "../../utils/getResetExperienceObject";
 import getDummyState from "../../utils/getDummyState";
 import validateExperienceData from "../../utils/validateExperienceData";
 import getExperienceItemHash from "../../utils/getExperienceItemHash";
@@ -20,21 +20,22 @@ function InitialPage() {
     });
 
     const [educationalExperience, setEducationalExperience] = useState({
-        schoolName: '',
-        titleOfStudy: '',
-        dateOfStudy: '',
+        name: '',
+        title: '',
+        period: '',
     });
 
     const [practicalExperience, setPracticalExperience] = useState({
-        companyName: '',
-        positionTitle: '',
+        name: '',
+        title: '',
         mainResponsibilities: '',
-        employmentPeriod: '',
+        period: '',
     });
 
-    // User experience data containers
     const [educationalExperienceContainer, setEducationalExperienceContainer] = useState([]);
+    const [practicalExperienceContainer, setPracticalExperienceContainer] = useState([]);
 
+    // Input handlers section
     function writeEducationalExperienceHandler() {
         if (!validateExperienceData(educationalExperience)) return;
 
@@ -51,13 +52,13 @@ function InitialPage() {
 
     function deleteEducationalHandler(id) {
         const newContainer = educationalExperienceContainer.filter((experience) => {
+            console.log("ORIGINAL =" + experience.id);
+            console.log("ARGUMENT =" + id);
             return experience.id !== id;
         });
 
         setEducationalExperienceContainer(newContainer);
     }
-
-    const [practicalExperienceContainer, setPracticalExperienceContainer] = useState([]);
 
     function writePracticalExperienceHandler() {
         if (!validateExperienceData(practicalExperience)) return;
@@ -74,7 +75,6 @@ function InitialPage() {
     }
 
     function deletePracticalHandler(id) {
-        
         const newContainer = practicalExperienceContainer.filter((experience) => {
             console.log("ORIGINAL =" + experience.id);
             console.log("ARGUMENT =" + id);
@@ -93,33 +93,34 @@ function InitialPage() {
     };
 
     const educationalHandlerContainer = {
-        schoolNameHandler: (e) => setEducationalExperience({ ...educationalExperience, schoolName: e.target.value }),
-        titleOfStudyHandler: (e) => setEducationalExperience({ ...educationalExperience, titleOfStudy: e.target.value }),
-        dateOfStudyHandler: (e) => setEducationalExperience({ ...educationalExperience, dateOfStudy: e.target.value }),
+        nameHandler: (e) => setEducationalExperience({ ...educationalExperience, name: e.target.value }),
+        titleHandler: (e) => setEducationalExperience({ ...educationalExperience, title: e.target.value }),
+        periodHandler: (e) => setEducationalExperience({ ...educationalExperience, period: e.target.value }),
     }
 
     const practicalHandlerContainer = {
-        companyNameHandler: (e) => setPracticalExperience({ ...practicalExperience, companyName: e.target.value }),
-        positionTitleHandler: (e) => setPracticalExperience({ ...practicalExperience, positionTitle: e.target.value }),
+        nameHandler: (e) => setPracticalExperience({ ...practicalExperience, name: e.target.value }),
+        titleHandler: (e) => setPracticalExperience({ ...practicalExperience, title: e.target.value }),
         mainResponsibilitiesHandler: (e) => setPracticalExperience({ ...practicalExperience, mainResponsibilities: e.target.value }),
-        employmentPeriodHandler: (e) => setPracticalExperience({ ...practicalExperience, employmentPeriod: e.target.value })
+        periodHandler: (e) => setPracticalExperience({ ...practicalExperience, period: e.target.value })
     }
 
+    // App Controls Section
     function resetStates() {
-        setGeneralInfo(getResetStateObject(generalInfo));
-        setEducationalExperience(getResetStateObject(educationalExperience));
-        setPracticalExperience(getResetStateObject(practicalExperience));
+        setGeneralInfo(getResetExperienceObject(generalInfo));
+        setEducationalExperience(getResetExperienceObject(educationalExperience));
+        setPracticalExperience(getResetExperienceObject(practicalExperience));
 
         setEducationalExperienceContainer([]);
         setPracticalExperienceContainer([]);
     }
 
     function resetEducationalExperience() {
-        setEducationalExperience(getResetStateObject(educationalExperience));
+        setEducationalExperience(getResetExperienceObject(educationalExperience));
     }
 
     function resetPracticalExperience() {
-        setPracticalExperience(getResetStateObject(practicalExperience));
+        setPracticalExperience(getResetExperienceObject(practicalExperience));
     }
 
     function setDummyState() {
@@ -146,9 +147,10 @@ function InitialPage() {
 
     return (
         <main className="main-page">
-            <ControlsSection {...appStateControlHandlers} />
+            <ControlsSection
+                {...appStateControlHandlers}
+            />
             <EditorSection
-                appStateControlHandlers={appStateControlHandlers}
                 generalInfoChange={{ generalInfo, generalHandlerContainer }}
                 educationalExperienceChange={{ educationalExperience, educationalHandlerContainer, writeEducationalExperienceHandler }}
                 practicalExperienceChange={{ practicalExperience, practicalHandlerContainer, writePracticalExperienceHandler }}

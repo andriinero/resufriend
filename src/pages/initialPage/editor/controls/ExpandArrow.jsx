@@ -1,6 +1,6 @@
-export { InputPanelExpand };
+export { ExpandArrow };
 
-function InputPanelExpand({
+function ExpandArrow({
     isExpanded,
     toggleExpandHandler,
 }) {

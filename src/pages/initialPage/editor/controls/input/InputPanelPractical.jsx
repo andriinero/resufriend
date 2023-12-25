@@ -14,13 +14,13 @@ function InputPanelPractical({
             <div className="input-panel__item">
                 <label className="input-panel__label" htmlFor="school-name">Company Name</label>
                 <div className="input-panel__field">
-                    <input value={practicalExperience.companyName} onChange={practicalHandlerContainer.companyNameHandler} id="school-name" type="text" placeholder="Company Name" />
+                    <input value={practicalExperience.name} onChange={practicalHandlerContainer.nameHandler} id="school-name" type="text" placeholder="Company Name" />
                 </div>
             </div>
             <div className="input-panel__item">
                 <label className="input-panel__label" htmlFor="title-of-study">Position Title</label>
                 <div className="input-panel__field">
-                    <input value={practicalExperience.positionTitle} onChange={practicalHandlerContainer.positionTitleHandler} id="title-of-study" type="text" placeholder="Title" />
+                    <input value={practicalExperience.title} onChange={practicalHandlerContainer.titleHandler} id="title-of-study" type="text" placeholder="Title" />
                 </div>
             </div>
             <div className="input-panel__item">
@@ -32,7 +32,7 @@ function InputPanelPractical({
             <div className="input-panel__item">
                 <label className="input-panel__label" htmlFor="date-of-study">Employment Period</label>
                 <div className="input-panel__field">
-                    <input value={practicalExperience.employmentPeriod} onChange={practicalHandlerContainer.employmentPeriodHandler} id="date-of-study" type="text" placeholder="01.01.2001 - 01.01.2002" />
+                    <input value={practicalExperience.period} onChange={practicalHandlerContainer.periodHandler} id="date-of-study" type="text" placeholder="01.01.2001 - 01.01.2002" />
                 </div>
             </div>
             <div className="input-panel__controls">

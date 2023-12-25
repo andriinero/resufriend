@@ -2,9 +2,8 @@ export { ScreenSection };
 
 import '../../../style/screen.css';
 
-import { ScreenEducationalExperience } from "./cv-page/ScreenEducationalExperience";
 import { ScreenGeneralInfo } from "./cv-page/ScreenGeneralInfo";
-import { ScreenPracticalExperience } from "./cv-page/ScreenPracticalExperience";
+import { ScreenList } from './cv-page/ScreenList';
 
 function ScreenSection({
     generalInfo,
@@ -18,11 +17,11 @@ function ScreenSection({
                 <ScreenGeneralInfo
                     {...generalInfo}
                 />
-                <ScreenEducationalExperience
-                    educationalExperienceContainer={educationalExperienceContainer}
+                <ScreenList
+                    experienceContainer={educationalExperienceContainer}
                 />
-                <ScreenPracticalExperience
-                    practicalExperienceContainer={practicalExperienceContainer}
+                <ScreenList
+                    experienceContainer={practicalExperienceContainer}
                 />
             </div>
         </section>

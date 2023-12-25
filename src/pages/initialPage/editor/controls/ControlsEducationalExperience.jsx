@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { InputPanelEducational } from "./InputPanelEducational";
-import { InputPanelExpand } from "../../../../components/editor/InputPanelExpand";
-import { InputEducationalContainer } from "./InputEducationalContainer";
+import { InputPanelEducational } from "./input/InputPanelEducational";
+import { ExpandArrow } from "./ExpandArrow";
+import { PanelList } from "./input/PanelList";
 
 export { ControlsEducationalExperience };
 
@@ -27,17 +27,18 @@ function ControlsEducationalExperience({
                     <img className="input-panel__title-icon" src="/educational-experience.svg" alt="General Information Icon" />
                     <h1 className="input-panel__title-h1">Educational Experience</h1>
                 </div>
-                <InputPanelExpand isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
+                <ExpandArrow isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
             </div>
             {isEditMode ?
                 (<InputPanelEducational
                     isExpanded={isExpanded}
                     toggleEditModeHandler={toggleEditModeHandler}
                     {...educationalExperienceChange} />) :
-                (<InputEducationalContainer
+                (<PanelList
                     isExpanded={isExpanded}
                     toggleEditModeHandler={toggleEditModeHandler}
-                    {...educationalExperienceEdit}
+                    experienceContainer={educationalExperienceEdit.educationalExperienceContainer}
+                    deleteHandler={educationalExperienceEdit.deleteEducationalHandler}
                 />)}
         </div>
     );

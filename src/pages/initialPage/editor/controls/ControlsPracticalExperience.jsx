@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { InputPanelExpand } from "../../../../components/editor/InputPanelExpand";
-import { InputPanelPractical } from "./InputPanelPractical";
-import { InputPracticalContainer } from "./InputPracticalContainer";
+import { ExpandArrow } from "./ExpandArrow";
+import { InputPanelPractical } from "./input/InputPanelPractical";
+import { PanelList } from "./input/PanelList";
 
 export { ControlsPracticalExperience };
 
@@ -27,17 +27,18 @@ function ControlsPracticalExperience({
                     <img className="input-panel__title-icon" src="/practical-experience.svg" alt="General Information Icon" />
                     <h1 className="input-panel__title-h1">Practical Experience</h1>
                 </div>
-                <InputPanelExpand isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
+                <ExpandArrow isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
             </div>
             {isEditMode ?
                 (<InputPanelPractical
                     isExpanded={isExpanded}
                     toggleEditModeHandler={toggleEditModeHandler}
                     {...practicalExperienceChange} />) :
-                (<InputPracticalContainer
+                (<PanelList
                     isExpanded={isExpanded}
                     toggleEditModeHandler={toggleEditModeHandler}
-                    {...practicalExperienceEdit}
+                    experienceContainer={practicalExperienceEdit.practicalExperienceContainer}
+                    deleteHandler={practicalExperienceEdit.deletePracticalHandler}
                 />)}
         </div>
     );

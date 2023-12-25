@@ -1,11 +1,11 @@
-import { EducationalItem } from "../../../../components/editor/EducationalItem";
+import { PanelListItem } from "./PanelListItem";
 
-export { InputEducationalContainer };
+export { PanelList };
 
-function InputEducationalContainer({
+function PanelList({
     isExpanded,
-    educationalExperienceContainer,
-    deleteEducationalHandler,
+    experienceContainer,
+    deleteHandler,
     toggleEditModeHandler,
 }) {
     const expandedClass = isExpanded ? 'input-panel' : 'input-panel--hidden';
@@ -13,13 +13,12 @@ function InputEducationalContainer({
     return (
         <div className={expandedClass}>
             <div className="editor-container">
-                {educationalExperienceContainer.map((experience) => {
-                    console.log(experience.id);
-                    return <EducationalItem 
+                {experienceContainer.map((experience) => {
+                    return <PanelListItem
                         key={experience.id}
                         id={experience.id}
-                        schoolName={experience.schoolName}
-                        deleteEducationalHandler={deleteEducationalHandler}
+                        name={experience.name}
+                        deleteHandler={deleteHandler}
                     />
                 })}
             </div>
