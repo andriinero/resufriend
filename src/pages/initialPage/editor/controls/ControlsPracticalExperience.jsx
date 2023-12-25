@@ -10,14 +10,49 @@ function ControlsPracticalExperience({
     practicalExperienceEdit,
 }) {
     const [isExpanded, setIsExpanded] = useState(true);
-    const [isEditMode, setIsEditMode] = useState(true);
+    const [panelState, setPanelState] = useState('add');
 
-    function toggleExpandHandler(e) {
+    let panelComponent = null;
+
+    function toggleExpandHandler() {
         setIsExpanded(!isExpanded);
     }
 
-    function toggleEditModeHandler(e) {
-        setIsEditMode(!isEditMode)
+    function toggleAddModeHandler() {
+        switch (panelState) {
+            case 'add':
+                setPanelState('show');
+                break;
+            case 'show':
+                setPanelState('add');
+                break;
+            default:
+                break;
+        }
+    }
+
+    switch (panelState) {
+        case 'add':
+            panelComponent =
+                <InputPanelPractical
+                    isExpanded={isExpanded}
+                    toggleAddModeHandler={toggleAddModeHandler}
+                    {...practicalExperienceChange}
+                />
+            break;
+        case 'edit':
+            break;
+        case 'show':
+            panelComponent =
+                <PanelList
+                    isExpanded={isExpanded}
+                    toggleAddModeHandler={toggleAddModeHandler}
+                    experienceContainer={practicalExperienceEdit.practicalExperienceContainer}
+                    deleteHandler={practicalExperienceEdit.deletePracticalHandler}
+                />;
+            break;
+        default:
+            break;
     }
 
     return (
@@ -29,17 +64,7 @@ function ControlsPracticalExperience({
                 </div>
                 <ExpandArrow isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
             </div>
-            {isEditMode ?
-                (<InputPanelPractical
-                    isExpanded={isExpanded}
-                    toggleEditModeHandler={toggleEditModeHandler}
-                    {...practicalExperienceChange} />) :
-                (<PanelList
-                    isExpanded={isExpanded}
-                    toggleEditModeHandler={toggleEditModeHandler}
-                    experienceContainer={practicalExperienceEdit.practicalExperienceContainer}
-                    deleteHandler={practicalExperienceEdit.deletePracticalHandler}
-                />)}
+            {panelComponent}
         </div>
     );
 }

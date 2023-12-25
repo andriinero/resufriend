@@ -10,6 +10,7 @@ function EditorSection({
     practicalExperienceChange,
     educationalExperienceEdit,
     practicalExperienceEdit,
+    educationalExperienceSave,
 }) {
     return (
         <section className="editor-section">
@@ -19,6 +20,7 @@ function EditorSection({
                 practicalExperienceChange={practicalExperienceChange}
                 educationalExperienceEdit={educationalExperienceEdit}
                 practicalExperienceEdit={practicalExperienceEdit}
+                educationalExperienceSave={educationalExperienceSave}
             />
         </section>
     );

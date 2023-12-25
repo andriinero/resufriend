@@ -10,6 +10,7 @@ function EditorControls({
     practicalExperienceChange,
     educationalExperienceEdit,
     practicalExperienceEdit,
+    educationalExperienceSave,
 }) {
     return (
         <>
@@ -19,6 +20,7 @@ function EditorControls({
             <ControlsEducationalExperience
                 educationalExperienceChange={educationalExperienceChange}
                 educationalExperienceEdit={educationalExperienceEdit}
+                educationalExperienceSave={educationalExperienceSave}
             />
             <ControlsPracticalExperience
                 practicalExperienceChange={practicalExperienceChange}

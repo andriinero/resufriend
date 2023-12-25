@@ -6,7 +6,8 @@ function PanelList({
     isExpanded,
     experienceContainer,
     deleteHandler,
-    toggleEditModeHandler,
+    toggleAddModeHandler,
+    editMode,
 }) {
     const expandedClass = isExpanded ? 'input-panel' : 'input-panel--hidden';
 
@@ -22,10 +23,12 @@ function PanelList({
                         id={experience.id}
                         name={experience.name}
                         deleteHandler={deleteHandler}
+                        editMode={editMode}
+                        setCurrentEditIdHandler={editMode.setCurrentEditIdHandler}
                     />
                 })}
             </div>
-            <button className="input-panel__button input-panel__button--edit" onClick={toggleEditModeHandler} type="button">Add</button>
+            <button className="input-panel__button input-panel__button--edit" onClick={toggleAddModeHandler} type="button">Add</button>
         </div>
     );
 }

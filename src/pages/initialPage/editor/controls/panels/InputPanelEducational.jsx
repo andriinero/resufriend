@@ -3,13 +3,19 @@ import { InputItem } from "./InputItem";
 export { InputPanelEducational };
 
 function InputPanelEducational({
+    currentEditId = '',
     isExpanded,
     educationalExperience,
     educationalHandlerContainer,
     writeEducationalExperienceHandler,
-    toggleEditModeHandler,
+    toggleAddModeHandler,
+    saveEditEducationalHandler,
 }) {
     const expandedClass = isExpanded ? 'input-panel' : 'input-panel--hidden';
+    const saveButtonHandler = currentEditId ? () => { 
+        saveEditEducationalHandler(currentEditId); 
+        toggleAddModeHandler(currentEditId);
+    } : writeEducationalExperienceHandler;
 
     return (
         <div className={expandedClass}>
@@ -38,8 +44,8 @@ function InputPanelEducational({
                 <span>Date of Study</span>
             </InputItem>
             <div className="input-panel__controls">
-                <button className="input-panel__button" onClick={toggleEditModeHandler} type="button">Cancel</button>
-                <button className="input-panel__button" onClick={writeEducationalExperienceHandler} type="button">Save</button>
+                <button className="input-panel__button" onClick={() => { toggleAddModeHandler(currentEditId) }} type="button">Cancel</button>
+                <button className="input-panel__button" onClick={saveButtonHandler} type="button">Save</button>
             </div>
         </div>
     );

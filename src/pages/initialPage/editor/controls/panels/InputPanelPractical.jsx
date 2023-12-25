@@ -7,7 +7,7 @@ function InputPanelPractical({
     practicalExperience,
     practicalHandlerContainer,
     writePracticalExperienceHandler,
-    toggleEditModeHandler,
+    toggleAddModeHandler,
 }) {
     const expandedClass = isExpanded ? 'input-panel' : 'input-panel--hidden';
 
@@ -46,7 +46,7 @@ function InputPanelPractical({
                 <span>Period of Employment</span>
             </InputItem>
             <div className="input-panel__controls">
-                <button className="input-panel__button" onClick={toggleEditModeHandler} type="button">Cancel</button>
+                <button className="input-panel__button" onClick={toggleAddModeHandler} type="button">Cancel</button>
                 <button className="input-panel__button" onClick={writePracticalExperienceHandler} type="button">Save</button>
             </div>
         </div>

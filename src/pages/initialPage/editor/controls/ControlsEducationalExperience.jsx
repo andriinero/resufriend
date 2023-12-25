@@ -8,16 +8,74 @@ export { ControlsEducationalExperience };
 function ControlsEducationalExperience({
     educationalExperienceChange,
     educationalExperienceEdit,
+    educationalExperienceSave,
 }) {
     const [isExpanded, setIsExpanded] = useState(true);
-    const [isEditMode, setIsEditMode] = useState(true);
+    const [panelState, setPanelState] = useState('add');
+    const [currentEditId, setCurrentEditId] = useState(null);
 
-    function toggleExpandHandler(e) {
+    let panelComponent = null;
+
+    function toggleExpandHandler() {
         setIsExpanded(!isExpanded);
     }
 
-    function toggleEditModeHandler(e) {
-        setIsEditMode(!isEditMode)
+    function toggleAddModeHandler(id) {
+        switch (panelState) {
+            case 'add':
+            case 'edit':
+                setPanelState('show');
+                break;
+            case 'show':
+                setPanelState('add');
+                break;
+            default:
+                console.log('enter');
+                break;
+        }
+
+        if(id) setCurrentEditId(null);
+    }
+
+    function switchEditModeHandler() {
+        setPanelState('edit');
+    }
+
+    function setCurrentEditIdHandler(id) {
+        console.log('SET: ' + id);
+        setCurrentEditId(id);
+    }
+
+    switch (panelState) {
+        case 'add':
+            panelComponent =
+                <InputPanelEducational
+                    isExpanded={isExpanded}
+                    toggleAddModeHandler={toggleAddModeHandler}
+                    {...educationalExperienceChange}
+                />;
+            break;
+        case 'edit':
+            panelComponent = <InputPanelEducational
+                {...educationalExperienceChange}
+                currentEditId={currentEditId}
+                isExpanded={isExpanded}
+                toggleAddModeHandler={toggleAddModeHandler}
+                saveEditEducationalHandler={educationalExperienceSave.saveEditEducationalHandler}
+            />;
+            break;
+        case 'show':
+            panelComponent =
+                <PanelList
+                    isExpanded={isExpanded}
+                    toggleAddModeHandler={toggleAddModeHandler}
+                    experienceContainer={educationalExperienceEdit.educationalExperienceContainer}
+                    deleteHandler={educationalExperienceEdit.deleteEducationalHandler}
+                    editMode={{ setCurrentEditIdHandler, switchEditModeHandler, enterEditModeHandler: educationalExperienceSave.enterEditModeHandler }}
+                />;
+            break;
+        default:
+            break;
     }
 
     return (
@@ -29,17 +87,7 @@ function ControlsEducationalExperience({
                 </div>
                 <ExpandArrow isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
             </div>
-            {isEditMode ?
-                (<InputPanelEducational
-                    isExpanded={isExpanded}
-                    toggleEditModeHandler={toggleEditModeHandler}
-                    {...educationalExperienceChange} />) :
-                (<PanelList
-                    isExpanded={isExpanded}
-                    toggleEditModeHandler={toggleEditModeHandler}
-                    experienceContainer={educationalExperienceEdit.educationalExperienceContainer}
-                    deleteHandler={educationalExperienceEdit.deleteEducationalHandler}
-                />)}
+            {panelComponent}
         </div>
     );
 }

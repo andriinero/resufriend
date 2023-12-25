@@ -43,7 +43,6 @@
 }
 
 .controls-section__icon--pressed {
-    transition: transform 100ms;
     transform: scale(0.9);
 }
 

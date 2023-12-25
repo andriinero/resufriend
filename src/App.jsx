@@ -60,6 +60,31 @@ function App() {
         setEducationalExperienceContainer(newContainer);
     }
 
+    function enterEditModeHandler(id) {
+        const selectedItem = educationalExperienceContainer.find(experience => experience.id === id);
+        setEducationalExperience(selectedItem);
+    }
+
+    function saveEditEducationalHandler(id) {
+        if (!validateExperienceData(educationalExperience)) return;
+
+        const newContainer = educationalExperienceContainer.filter((experience) => {
+            return experience.id !== id;
+        });
+    
+        setEducationalExperienceContainer(newContainer)
+        
+        setEducationalExperienceContainer(
+            [...newContainer,
+            {
+                ...educationalExperience,
+                id: getExperienceItemHash(educationalExperience)
+            }]
+        );
+
+        resetEducationalExperience();
+    }
+
     function writePracticalExperienceHandler() {
         if (!validateExperienceData(practicalExperience)) return;
 
@@ -156,6 +181,7 @@ function App() {
                 practicalExperienceChange={{ practicalExperience, practicalHandlerContainer, writePracticalExperienceHandler }}
                 educationalExperienceEdit={{ educationalExperienceContainer, deleteEducationalHandler }}
                 practicalExperienceEdit={{ practicalExperienceContainer, deletePracticalHandler }}
+                educationalExperienceSave={{ enterEditModeHandler, saveEditEducationalHandler }}
             />
             <ScreenSection
                 generalInfo={generalInfo}
