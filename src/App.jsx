@@ -60,7 +60,7 @@ function App() {
         setEducationalExperienceContainer(newContainer);
     }
 
-    function enterEditModeHandler(id) {
+    function enterEditEducationalHandler(id) {
         const selectedItem = educationalExperienceContainer.find(experience => experience.id === id);
         setEducationalExperience(selectedItem);
     }
@@ -71,9 +71,9 @@ function App() {
         const newContainer = educationalExperienceContainer.filter((experience) => {
             return experience.id !== id;
         });
-    
+
         setEducationalExperienceContainer(newContainer)
-        
+
         setEducationalExperienceContainer(
             [...newContainer,
             {
@@ -107,6 +107,31 @@ function App() {
         });
 
         setPracticalExperienceContainer(newContainer);
+    }
+
+    function enterEditPracticalHandler(id) {
+        const selectedItem = practicalExperienceContainer.find(experience => experience.id === id);
+        setPracticalExperience(selectedItem);
+    }
+
+    function saveEditPracticalHandler(id) {
+        if (!validateExperienceData(practicalExperience)) return;
+
+        const newContainer = practicalExperienceContainer.filter((experience) => {
+            return experience.id !== id;
+        });
+
+        setPracticalExperienceContainer(newContainer)
+
+        setPracticalExperienceContainer(
+            [...newContainer,
+            {
+                ...practicalExperience,
+                id: getExperienceItemHash(practicalExperience)
+            }]
+        );
+
+        resetPracticalExperience();
     }
 
     const generalHandlerContainer = {
@@ -181,7 +206,8 @@ function App() {
                 practicalExperienceChange={{ practicalExperience, practicalHandlerContainer, writePracticalExperienceHandler }}
                 educationalExperienceEdit={{ educationalExperienceContainer, deleteEducationalHandler }}
                 practicalExperienceEdit={{ practicalExperienceContainer, deletePracticalHandler }}
-                educationalExperienceSave={{ enterEditModeHandler, saveEditEducationalHandler }}
+                educationalExperienceSave={{ enterEditEducationalHandler, saveEditEducationalHandler }}
+                practicalExperienceSave={{ enterEditPracticalHandler, saveEditPracticalHandler }}
             />
             <ScreenSection
                 generalInfo={generalInfo}

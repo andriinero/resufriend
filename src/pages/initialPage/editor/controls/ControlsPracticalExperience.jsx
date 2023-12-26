@@ -8,9 +8,11 @@ export { ControlsPracticalExperience };
 function ControlsPracticalExperience({
     practicalExperienceChange,
     practicalExperienceEdit,
+    practicalExperienceSave,
 }) {
     const [isExpanded, setIsExpanded] = useState(true);
     const [panelState, setPanelState] = useState('add');
+    const [currentEditId, setCurrentEditId] = useState(null);
 
     let panelComponent = null;
 
@@ -18,17 +20,30 @@ function ControlsPracticalExperience({
         setIsExpanded(!isExpanded);
     }
 
-    function toggleAddModeHandler() {
+    function toggleAddModeHandler(id) {
         switch (panelState) {
             case 'add':
+            case 'edit':
                 setPanelState('show');
                 break;
             case 'show':
                 setPanelState('add');
                 break;
             default:
+                console.log('enter');
                 break;
         }
+
+        if (id) setCurrentEditId(null);
+    }
+
+    function switchEditModeHandler() {
+        setPanelState('edit');
+    }
+
+    function setCurrentEditIdHandler(id) {
+        console.log('SET: ' + id);
+        setCurrentEditId(id);
     }
 
     switch (panelState) {
@@ -41,6 +56,14 @@ function ControlsPracticalExperience({
                 />
             break;
         case 'edit':
+            panelComponent =
+                <InputPanelPractical
+                    {...practicalExperienceChange}
+                    currentEditId={currentEditId}
+                    isExpanded={isExpanded}
+                    toggleAddModeHandler={toggleAddModeHandler}
+                    saveEditPracticalHandler={practicalExperienceSave.saveEditPracticalHandler}
+                />
             break;
         case 'show':
             panelComponent =
@@ -49,6 +72,7 @@ function ControlsPracticalExperience({
                     toggleAddModeHandler={toggleAddModeHandler}
                     experienceContainer={practicalExperienceEdit.practicalExperienceContainer}
                     deleteHandler={practicalExperienceEdit.deletePracticalHandler}
+                    editMode={{ setCurrentEditIdHandler, switchEditModeHandler, enterEditModeHandler: practicalExperienceSave.enterEditPracticalHandler }}
                 />;
             break;
         default:

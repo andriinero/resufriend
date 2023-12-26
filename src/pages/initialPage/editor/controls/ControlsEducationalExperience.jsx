@@ -34,7 +34,7 @@ function ControlsEducationalExperience({
                 break;
         }
 
-        if(id) setCurrentEditId(null);
+        if (id) setCurrentEditId(null);
     }
 
     function switchEditModeHandler() {
@@ -56,13 +56,14 @@ function ControlsEducationalExperience({
                 />;
             break;
         case 'edit':
-            panelComponent = <InputPanelEducational
-                {...educationalExperienceChange}
-                currentEditId={currentEditId}
-                isExpanded={isExpanded}
-                toggleAddModeHandler={toggleAddModeHandler}
-                saveEditEducationalHandler={educationalExperienceSave.saveEditEducationalHandler}
-            />;
+            panelComponent =
+                <InputPanelEducational
+                    {...educationalExperienceChange}
+                    currentEditId={currentEditId}
+                    isExpanded={isExpanded}
+                    toggleAddModeHandler={toggleAddModeHandler}
+                    saveEditEducationalHandler={educationalExperienceSave.saveEditEducationalHandler}
+                />;
             break;
         case 'show':
             panelComponent =
@@ -71,7 +72,7 @@ function ControlsEducationalExperience({
                     toggleAddModeHandler={toggleAddModeHandler}
                     experienceContainer={educationalExperienceEdit.educationalExperienceContainer}
                     deleteHandler={educationalExperienceEdit.deleteEducationalHandler}
-                    editMode={{ setCurrentEditIdHandler, switchEditModeHandler, enterEditModeHandler: educationalExperienceSave.enterEditModeHandler }}
+                    editMode={{ setCurrentEditIdHandler, switchEditModeHandler, enterEditModeHandler: educationalExperienceSave.enterEditEducationalHandler }}
                 />;
             break;
         default:

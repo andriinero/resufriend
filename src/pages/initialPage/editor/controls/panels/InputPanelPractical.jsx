@@ -3,13 +3,19 @@ import { InputItem } from "./InputItem";
 export { InputPanelPractical };
 
 function InputPanelPractical({
+    currentEditId = '',
     isExpanded,
     practicalExperience,
     practicalHandlerContainer,
     writePracticalExperienceHandler,
     toggleAddModeHandler,
+    saveEditPracticalHandler,
 }) {
     const expandedClass = isExpanded ? 'input-panel' : 'input-panel--hidden';
+    const saveButtonHandler = currentEditId ? () => {
+        saveEditPracticalHandler(currentEditId);
+        toggleAddModeHandler(currentEditId);
+    } : writePracticalExperienceHandler;
 
     return (
         <div className={expandedClass}>
@@ -46,8 +52,8 @@ function InputPanelPractical({
                 <span>Period of Employment</span>
             </InputItem>
             <div className="input-panel__controls">
-                <button className="input-panel__button" onClick={toggleAddModeHandler} type="button">Cancel</button>
-                <button className="input-panel__button" onClick={writePracticalExperienceHandler} type="button">Save</button>
+                <button className="input-panel__button" onClick={() => { toggleAddModeHandler(currentEditId) }} type="button">Cancel</button>
+                <button className="input-panel__button" onClick={saveButtonHandler} type="button">Save</button>
             </div>
         </div>
     );
