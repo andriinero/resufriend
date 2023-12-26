@@ -14,7 +14,7 @@
         grid-area: editor;
     }
 
-    .screen-section {
+    .preview-section {
         grid-area: preview;
     }
 }

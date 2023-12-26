@@ -34,54 +34,54 @@
         padding: 0.8rem;
     }
 
-    .screen-section {
+    .preview-section {
         padding: 1rem;
     }
 
-    .screen-header {
+    .preview-header {
         padding: 2rem;
         display: flex;
         flex-direction: column;
         gap: 2.4rem
     }
 
-    .screen-header__full-name {
+    .preview-header__full-name {
         font-size: 2rem;
     }
 
-    .screen-header__misc-container {
+    .preview-header__misc-container {
         flex-direction: column;
     }
 
-    .screen-header__misc-item {
+    .preview-header__misc-item {
         font-size: 1rem;
     }
 
-    .screen-container {
+    .preview-container {
         padding: 1rem 2rem;
     }
 
-    .screen-container__header {
+    .preview-container__header {
         font-size: 1.3rem;
     }
 
-    .experience {
+    .experience-list {
         padding: 0.5rem;
     }
 
-    .experience__item-header {
+    .experience-list__item-header {
         font-size: 1.3rem;
     }
 
-    .experience__item-title {
+    .experience-list__item-title {
         font-size: 1.3rem;
     }
 
-    .experience__item-text {
+    .experience-list__item-text {
         font-size: 1.2rem;
     }
 
-    .experience__item-date {
+    .experience-list__item-date {
         font-size: 1rem;
     }
 }
