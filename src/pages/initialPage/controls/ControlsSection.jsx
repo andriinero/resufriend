@@ -1,7 +1,7 @@
 export { ControlsSection };
 
 import { ControlsButton } from './ControlsButton';
-import '../../../style/controls.css';
+import '../../../style/sections/controls.css';
 
 function ControlsSection({
     resetStates,

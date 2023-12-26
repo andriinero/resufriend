@@ -3,7 +3,7 @@ export { App };
 import { useState } from "react";
 import { ControlsSection } from "./pages/initialPage/controls/ControlsSection";
 import { EditorSection } from "./pages/initialPage/editor/EditorSection";
-import { ScreenSection } from "./pages/initialPage/screen/ScreenSection";
+import { PreviewSection } from "./pages/initialPage/preview/PreviewSection";
 import getResetExperienceObject from "./utils/getResetExperienceObject";
 import getDummyState from "./utils/getDummyState";
 import validateExperienceData from "./utils/validateExperienceData";
@@ -209,7 +209,7 @@ function App() {
                 educationalExperienceSave={{ enterEditEducationalHandler, saveEditEducationalHandler }}
                 practicalExperienceSave={{ enterEditPracticalHandler, saveEditPracticalHandler }}
             />
-            <ScreenSection
+            <PreviewSection
                 generalInfo={generalInfo}
                 educationalExperienceContainer={educationalExperienceContainer}
                 practicalExperienceContainer={practicalExperienceContainer}

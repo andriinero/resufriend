@@ -1,8 +1,8 @@
 export { EditorControls };
 
-import { ControlsGeneralInfo } from "./controls/ControlsGeneralInfo";
-import { ControlsEducationalExperience } from "./controls/ControlsEducationalExperience";
-import { ControlsPracticalExperience } from "./controls/ControlsPracticalExperience";
+import { PanelGeneral } from "./panel/PanelGeneral";
+import { PanelEducational } from "./panel/PanelEducational";
+import { PanelPractical } from "./panel/PanelPractical";
 
 function EditorControls({
     generalInfoChange,
@@ -15,15 +15,15 @@ function EditorControls({
 }) {
     return (
         <>
-            <ControlsGeneralInfo
+            <PanelGeneral
                 {...generalInfoChange}
             />
-            <ControlsEducationalExperience
+            <PanelEducational
                 educationalExperienceChange={educationalExperienceChange}
                 educationalExperienceEdit={educationalExperienceEdit}
                 educationalExperienceSave={educationalExperienceSave}
-                />
-            <ControlsPracticalExperience
+            />
+            <PanelPractical
                 practicalExperienceChange={practicalExperienceChange}
                 practicalExperienceEdit={practicalExperienceEdit}
                 practicalExperienceSave={practicalExperienceSave}

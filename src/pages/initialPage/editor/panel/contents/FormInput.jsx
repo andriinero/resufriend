@@ -1,6 +1,6 @@
-export { InputItem };
+export { FormInput };
 
-function InputItem({
+function FormInput({
     children,
     id,
     value,

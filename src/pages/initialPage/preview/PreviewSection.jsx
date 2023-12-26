@@ -1,32 +1,32 @@
-export { ScreenSection };
+export { PreviewSection };
 
-import '../../../style/screen.css';
+import '../../../style/sections/preview.css';
 
-import { ScreenGeneralInfo } from "./ScreenGeneralInfo";
-import { ScreenList } from './ScreenList';
+import { PreviewGeneral } from "./PreviewGeneral";
+import { PreviewList } from './PreviewList';
 
-function ScreenSection({
+function PreviewSection({
     generalInfo,
     educationalExperienceContainer,
     practicalExperienceContainer
 }
 ) {
     return (
-        <section className="screen-section">
-            <div className="screen">
-                <ScreenGeneralInfo
+        <section className="preview-section">
+            <div className="preview">
+                <PreviewGeneral
                     {...generalInfo}
                 />
-                <ScreenList
+                <PreviewList
                     experienceContainer={educationalExperienceContainer}
                 >
                     Educational Experience
-                </ScreenList>
-                <ScreenList
+                </PreviewList>
+                <PreviewList
                     experienceContainer={practicalExperienceContainer}
                 >
                     Practical Experience
-                </ScreenList>
+                </PreviewList>
             </div>
         </section>
     );

@@ -1,6 +1,6 @@
 export { EditorSection };
 
-import '../../../style/editor.css';
+import '../../../style/sections/editor.css';
 
 import { EditorControls } from "./EditorControls";
 

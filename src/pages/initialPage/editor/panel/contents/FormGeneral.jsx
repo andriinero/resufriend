@@ -1,8 +1,8 @@
-import { InputItem } from "./InputItem";
+import { FormInput } from "./FormInput";
 
-export { InputPanelGeneral };
+export { FormGeneral };
 
-function InputPanelGeneral({
+function FormGeneral({
     isExpanded,
     generalInfo,
     generalHandlerContainer,
@@ -18,30 +18,30 @@ function InputPanelGeneral({
                     <input value={generalInfo.lastName} onChange={generalHandlerContainer.lastNameHandler} id="name" type="text" placeholder="Last Name" />
                 </div>
             </div>
-            <InputItem
+            <FormInput
                 id="email"
                 placeholder="email@example.com"
                 value={generalInfo.email}
                 changeHandler={generalHandlerContainer.emailHandler}
             >
                 <span>Email</span>
-            </InputItem>
-            <InputItem
+            </FormInput>
+            <FormInput
                 id="phone-number"
                 placeholder="555 - 5555 - 5555"
                 value={generalInfo.phoneNumber}
                 changeHandler={generalHandlerContainer.phoneNumberHandler}
             >
                 <span>Phone Number</span>
-            </InputItem>
-            <InputItem
+            </FormInput>
+            <FormInput
                 id="location"
                 placeholder="Berlin, DE"
                 value={generalInfo.location}
                 changeHandler={generalHandlerContainer.locationHandler}
             >
                 <span>Location</span>
-            </InputItem>
+            </FormInput>
         </div>
     );
 }

@@ -1,0 +1,87 @@
+@media (max-width: 870px) {
+
+    .main-page {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-panel__label {
+        font-size: 1.3rem;
+    }
+
+    .controls-section {
+        padding: 1rem;
+    }
+
+    .controls-section__container {
+        padding: 0.5rem;
+    }
+
+    .controls-section__controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .controls-section__icon {
+        width: 36px;
+    }
+
+    .editor-section {
+        padding: 1rem;
+    }
+
+    .editor-section__container {
+        padding: 0.8rem;
+    }
+
+    .screen-section {
+        padding: 1rem;
+    }
+
+    .screen-header {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem
+    }
+
+    .screen-header__full-name {
+        font-size: 2rem;
+    }
+
+    .screen-header__misc-container {
+        flex-direction: column;
+    }
+
+    .screen-header__misc-item {
+        font-size: 1rem;
+    }
+
+    .screen-container {
+        padding: 1rem 2rem;
+    }
+
+    .screen-container__header {
+        font-size: 1.3rem;
+    }
+
+    .experience {
+        padding: 0.5rem;
+    }
+
+    .experience__item-header {
+        font-size: 1.3rem;
+    }
+
+    .experience__item-title {
+        font-size: 1.3rem;
+    }
+
+    .experience__item-text {
+        font-size: 1.2rem;
+    }
+
+    .experience__item-date {
+        font-size: 1rem;
+    }
+}

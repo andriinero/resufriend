@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { InputPanelEducational } from "./panels/InputPanelEducational";
 import { ExpandArrow } from "./ExpandArrow";
-import { PanelList } from "./panels/PanelList";
+import { FormPractical } from "./contents/FormPractical";
+import { PanelList } from "./contents/PanelList";
 
-export { ControlsEducationalExperience };
+export { PanelPractical };
 
-function ControlsEducationalExperience({
-    educationalExperienceChange,
-    educationalExperienceEdit,
-    educationalExperienceSave,
+function PanelPractical({
+    practicalExperienceChange,
+    practicalExperienceEdit,
+    practicalExperienceSave,
 }) {
     const [isExpanded, setIsExpanded] = useState(true);
     const [panelState, setPanelState] = useState('add');
@@ -49,30 +49,30 @@ function ControlsEducationalExperience({
     switch (panelState) {
         case 'add':
             panelComponent =
-                <InputPanelEducational
+                <FormPractical
                     isExpanded={isExpanded}
                     toggleAddModeHandler={toggleAddModeHandler}
-                    {...educationalExperienceChange}
-                />;
+                    {...practicalExperienceChange}
+                />
             break;
         case 'edit':
             panelComponent =
-                <InputPanelEducational
-                    {...educationalExperienceChange}
+                <FormPractical
+                    {...practicalExperienceChange}
                     currentEditId={currentEditId}
                     isExpanded={isExpanded}
                     toggleAddModeHandler={toggleAddModeHandler}
-                    saveEditEducationalHandler={educationalExperienceSave.saveEditEducationalHandler}
-                />;
+                    saveEditPracticalHandler={practicalExperienceSave.saveEditPracticalHandler}
+                />
             break;
         case 'show':
             panelComponent =
                 <PanelList
                     isExpanded={isExpanded}
                     toggleAddModeHandler={toggleAddModeHandler}
-                    experienceContainer={educationalExperienceEdit.educationalExperienceContainer}
-                    deleteHandler={educationalExperienceEdit.deleteEducationalHandler}
-                    editMode={{ setCurrentEditIdHandler, switchEditModeHandler, enterEditModeHandler: educationalExperienceSave.enterEditEducationalHandler }}
+                    experienceContainer={practicalExperienceEdit.practicalExperienceContainer}
+                    deleteHandler={practicalExperienceEdit.deletePracticalHandler}
+                    editMode={{ setCurrentEditIdHandler, switchEditModeHandler, enterEditModeHandler: practicalExperienceSave.enterEditPracticalHandler }}
                 />;
             break;
         default:
@@ -83,8 +83,8 @@ function ControlsEducationalExperience({
         <div className="editor-section__container">
             <div className="input-panel__header">
                 <div className="input-panel__title">
-                    <img className="input-panel__title-icon" src="/educational-experience.svg" alt="General Information Icon" />
-                    <h1 className="input-panel__title-h1">Educational Experience</h1>
+                    <img className="input-panel__title-icon" src="/practical-experience.svg" alt="General Information Icon" />
+                    <h1 className="input-panel__title-h1">Practical Experience</h1>
                 </div>
                 <ExpandArrow isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
             </div>

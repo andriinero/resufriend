@@ -1,8 +1,8 @@
-import { InputItem } from "./InputItem";
+import { FormInput } from "./FormInput";
 
-export { InputPanelPractical };
+export { FormPractical };
 
-function InputPanelPractical({
+function FormPractical({
     currentEditId = '',
     isExpanded,
     practicalExperience,
@@ -19,38 +19,38 @@ function InputPanelPractical({
 
     return (
         <div className={expandedClass}>
-            <InputItem
+            <FormInput
                 id="company-name"
                 placeholder="Name"
                 value={practicalExperience.name}
                 changeHandler={practicalHandlerContainer.nameHandler}
             >
                 <span>Company Name</span>
-            </InputItem>
-            <InputItem
+            </FormInput>
+            <FormInput
                 id="position-title"
                 placeholder="Title"
                 value={practicalExperience.title}
                 changeHandler={practicalHandlerContainer.titleHandler}
             >
                 <span>Position Title</span>
-            </InputItem>
-            <InputItem
+            </FormInput>
+            <FormInput
                 id="main-responsibilities"
                 placeholder="Responsibilities"
                 value={practicalExperience.mainResponsibilities}
                 changeHandler={practicalHandlerContainer.mainResponsibilitiesHandler}
             >
                 <span>Main Responsibilities</span>
-            </InputItem>
-            <InputItem
+            </FormInput>
+            <FormInput
                 id="period-of-employment"
                 placeholder="01.01.2001 - 01.01.2002"
                 value={practicalExperience.period}
                 changeHandler={practicalHandlerContainer.periodHandler}
             >
                 <span>Period of Employment</span>
-            </InputItem>
+            </FormInput>
             <div className="input-panel__controls">
                 <button className="input-panel__button" onClick={() => { toggleAddModeHandler(currentEditId) }} type="button">Cancel</button>
                 <button className="input-panel__button" onClick={saveButtonHandler} type="button">Save</button>

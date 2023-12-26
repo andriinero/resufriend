@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { ExpandArrow } from "./ExpandArrow";
-import { InputPanelGeneral } from "./panels/InputPanelGeneral";
+import { FormGeneral } from "./contents/FormGeneral";
 
-export { ControlsGeneralInfo };
+export { PanelGeneral };
 
-function ControlsGeneralInfo({
+function PanelGeneral({
     generalInfo,
     generalHandlerContainer
 }) {
@@ -23,11 +23,11 @@ function ControlsGeneralInfo({
                 </div>
                 <ExpandArrow isExpanded={isExpanded} toggleExpandHandler={toggleExpandHandler} />
             </div>
-            <InputPanelGeneral
-             isExpanded={isExpanded} 
-             generalInfo={generalInfo}
-             generalHandlerContainer={generalHandlerContainer}
-              />
+            <FormGeneral
+                isExpanded={isExpanded}
+                generalInfo={generalInfo}
+                generalHandlerContainer={generalHandlerContainer}
+            />
         </div>
     );
 }

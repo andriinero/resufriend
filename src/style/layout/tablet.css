@@ -1,0 +1,20 @@
+@media (max-width: 1280px) {
+    .main-page {
+        grid-template-columns: 0.3fr minmax(400px, 2fr);
+        grid-template-areas:
+            'controls editor'
+            'preview preview';
+    }
+
+    .controls-section {
+        grid-area: controls;
+    }
+
+    .editor-section {
+        grid-area: editor;
+    }
+
+    .screen-section {
+        grid-area: preview;
+    }
+}
