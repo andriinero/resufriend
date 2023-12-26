@@ -21,8 +21,8 @@ function ControlsButton({
 
     return (
         <div className={`controls-section__controls-item ${interactionStyle}`}>
-            <img id='clear-button' onMouseDown={mouseDownHandler} onMouseUp={mouseUpHandler} onClick={actionHandler} className="controls-section__icon control-icon" src={imgSrc} alt={altText} />
-            <label className={`controls-section__label ${additionalClassName}`} htmlFor="clear-button">{children}</label>
+            <img id='clear-button' className="icon controls-section__icon control-icon" onMouseDown={mouseDownHandler} onMouseUp={mouseUpHandler} onClick={actionHandler} src={imgSrc} alt={altText} />
+            <label className={`controls-section__label text--unselectable ${additionalClassName}`} htmlFor="clear-button">{children}</label>
         </div>
     );
 }

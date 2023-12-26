@@ -186,9 +186,14 @@ function App() {
         setPracticalExperience(dummyPracticalExperience);
     }
 
+    function printCV() {
+        window.print();
+    }
+
     const appStateControlHandlers = {
         resetStates,
         setDummyState,
+        printCV
     }
 
     return (

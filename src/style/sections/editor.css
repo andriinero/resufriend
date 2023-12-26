@@ -36,10 +36,6 @@
     height: auto;
 }
 
-.control-icon:hover {
-    cursor: pointer;
-}
-
 .input-panel {
     opacity: 1;
     display: flex;

@@ -13,7 +13,7 @@ function Preview({
 ) {
     return (
         <section className="preview-section">
-            <div className="preview">
+            <div id="preview" className="preview">
                 <PreviewGeneral
                     {...generalInfo}
                 />

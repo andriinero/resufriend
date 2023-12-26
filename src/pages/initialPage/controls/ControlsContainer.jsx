@@ -5,7 +5,7 @@ export { ControlsContainer };
 function ControlsContainer({
     resetStates,
     setDummyState,
-    printDocument,
+    printCV,
 }) {
     return (
         <div className="controls-section__container">
@@ -28,7 +28,7 @@ function ControlsContainer({
                 <ControlsButton
                     imgSrc="/printer.svg"
                     altText='Print CV Icon'
-                    actionHandler={printDocument}
+                    actionHandler={printCV}
                 >
                     <span>Print</span>
                 </ControlsButton>

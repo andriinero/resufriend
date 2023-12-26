@@ -12,7 +12,7 @@ function FormGeneral({
     return (
         <form className={expandedClass}>
             <div className="input-panel__item">
-                <label className="input-panel__label" htmlFor="name">Full Name</label>
+                <label className="input-panel__label text--unselectable" htmlFor="name">Full Name</label>
                 <div className="input-panel__field">
                     <input value={generalInfo.firstName} onChange={generalHandlerContainer.firstNameHandler} id="name" type="text" placeholder="First Name" />
                     <input value={generalInfo.lastName} onChange={generalHandlerContainer.lastNameHandler} id="name" type="text" placeholder="Last Name" />

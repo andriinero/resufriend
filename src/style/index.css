@@ -38,3 +38,19 @@ button:hover {
     justify-content: center;
     grid-template-columns: minmax(100px, 150px) minmax(400px, 700px) minmax(700px, 1000px);
 }
+
+.text--unselectable {
+    user-select: none;
+}
+
+.icon {
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.control-icon:hover {
+    cursor: pointer;
+}

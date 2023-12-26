@@ -4,11 +4,7 @@ function ExpandArrow({
     isExpanded,
     toggleExpandHandler,
 }) {
-    const expandClass = isExpanded ? 
-    'input-panel__arrow input-panel__arrow--expanded control-icon' : 
-    'input-panel__arrow control-icon';
-
     return (
-        <img onClick={toggleExpandHandler} className={expandClass} src="/chevron-down.svg" alt="Expand Icon" />
+        <img onClick={toggleExpandHandler} className={`icon input-panel__arrow control-icon ${isExpanded && 'input-panel__arrow--expanded'}`} src="/chevron-down.svg" alt="Expand Icon" />
     );
 }
