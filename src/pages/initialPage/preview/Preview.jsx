@@ -1,11 +1,11 @@
-export { PreviewSection };
-
 import '../../../style/sections/preview.css';
 
 import { PreviewGeneral } from "./PreviewGeneral";
-import { PreviewList } from './PreviewList';
+import { PreviewList } from '../../../components/preview/PreviewList';
 
-function PreviewSection({
+export { Preview };
+
+function Preview({
     generalInfo,
     educationalExperienceContainer,
     practicalExperienceContainer

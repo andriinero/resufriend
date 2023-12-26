@@ -1,4 +1,4 @@
-import { FormInput } from "./FormInput";
+import { FormField } from "../../../../../components/editor/FormField";
 
 export { FormGeneral };
 
@@ -10,7 +10,7 @@ function FormGeneral({
     const expandedClass = isExpanded ? 'input-panel' : 'input-panel--hidden';
 
     return (
-        <div className={expandedClass}>
+        <form className={expandedClass}>
             <div className="input-panel__item">
                 <label className="input-panel__label" htmlFor="name">Full Name</label>
                 <div className="input-panel__field">
@@ -18,30 +18,27 @@ function FormGeneral({
                     <input value={generalInfo.lastName} onChange={generalHandlerContainer.lastNameHandler} id="name" type="text" placeholder="Last Name" />
                 </div>
             </div>
-            <FormInput
+            <FormField
                 id="email"
+                labelText="Email"
                 placeholder="email@example.com"
-                value={generalInfo.email}
-                changeHandler={generalHandlerContainer.emailHandler}
-            >
-                <span>Email</span>
-            </FormInput>
-            <FormInput
+                inputValue={generalInfo.email}
+                changeHandler={generalHandlerContainer.emailHandler}>
+            </FormField>
+            <FormField
                 id="phone-number"
+                labelText="Phone Number"
                 placeholder="555 - 5555 - 5555"
-                value={generalInfo.phoneNumber}
-                changeHandler={generalHandlerContainer.phoneNumberHandler}
-            >
-                <span>Phone Number</span>
-            </FormInput>
-            <FormInput
+                inputValue={generalInfo.phoneNumber}
+                changeHandler={generalHandlerContainer.phoneNumberHandler}>
+            </FormField>
+            <FormField
                 id="location"
+                labelText="Location"
                 placeholder="Berlin, DE"
-                value={generalInfo.location}
-                changeHandler={generalHandlerContainer.locationHandler}
-            >
-                <span>Location</span>
-            </FormInput>
-        </div>
+                inputValue={generalInfo.location}
+                changeHandler={generalHandlerContainer.locationHandler}>
+            </FormField>
+        </form>
     );
 }

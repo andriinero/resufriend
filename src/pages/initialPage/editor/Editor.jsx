@@ -1,10 +1,12 @@
-export { EditorSection };
-
 import '../../../style/sections/editor.css';
 
-import { EditorControls } from "./EditorControls";
+import { PanelGeneral } from "./panels/PanelGeneral";
+import { PanelEducational } from "./panels/PanelEducational";
+import { PanelPractical } from "./panels/PanelPractical";
 
-function EditorSection({
+export { Editor };
+
+function Editor({
     generalInfoChange,
     educationalExperienceChange,
     practicalExperienceChange,
@@ -15,13 +17,17 @@ function EditorSection({
 }) {
     return (
         <section className="editor-section">
-            <EditorControls
-                generalInfoChange={generalInfoChange}
+            <PanelGeneral
+                {...generalInfoChange}
+            />
+            <PanelEducational
                 educationalExperienceChange={educationalExperienceChange}
-                practicalExperienceChange={practicalExperienceChange}
                 educationalExperienceEdit={educationalExperienceEdit}
-                practicalExperienceEdit={practicalExperienceEdit}
                 educationalExperienceSave={educationalExperienceSave}
+            />
+            <PanelPractical
+                practicalExperienceChange={practicalExperienceChange}
+                practicalExperienceEdit={practicalExperienceEdit}
                 practicalExperienceSave={practicalExperienceSave}
             />
         </section>

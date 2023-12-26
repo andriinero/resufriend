@@ -1,9 +1,11 @@
 export { App };
 
 import { useState } from "react";
-import { ControlsSection } from "./pages/initialPage/controls/ControlsSection";
-import { EditorSection } from "./pages/initialPage/editor/EditorSection";
-import { PreviewSection } from "./pages/initialPage/preview/PreviewSection";
+
+import { Controls } from "./pages/initialPage/controls/Controls";
+import { Editor } from "./pages/initialPage/editor/Editor";
+import { Preview } from "./pages/initialPage/preview/Preview";
+
 import getResetExperienceObject from "./utils/getResetExperienceObject";
 import getDummyState from "./utils/getDummyState";
 import validateExperienceData from "./utils/validateExperienceData";
@@ -35,7 +37,8 @@ function App() {
     const [educationalExperienceContainer, setEducationalExperienceContainer] = useState([]);
     const [practicalExperienceContainer, setPracticalExperienceContainer] = useState([]);
 
-    // Input handlers section
+    // State handlers section
+    // Educational Experience
     function writeEducationalExperienceHandler() {
         if (!validateExperienceData(educationalExperience)) return;
 
@@ -85,6 +88,7 @@ function App() {
         resetEducationalExperience();
     }
 
+    // Practical Experience
     function writePracticalExperienceHandler() {
         if (!validateExperienceData(practicalExperience)) return;
 
@@ -134,6 +138,7 @@ function App() {
         resetPracticalExperience();
     }
 
+    // General Information
     const generalHandlerContainer = {
         firstNameHandler: (e) => setGeneralInfo({ ...generalInfo, firstName: e.target.value }),
         lastNameHandler: (e) => setGeneralInfo({ ...generalInfo, lastName: e.target.value }),
@@ -181,26 +186,17 @@ function App() {
         setPracticalExperience(dummyPracticalExperience);
     }
 
-    function printDocument() {
-        try {
-            document.execCommand('print', false, null)
-        } catch {
-            window.print()
-        }
-    }
-
     const appStateControlHandlers = {
         resetStates,
         setDummyState,
-        printDocument,
     }
 
     return (
         <main className="main-page">
-            <ControlsSection
+            <Controls
                 {...appStateControlHandlers}
             />
-            <EditorSection
+            <Editor
                 generalInfoChange={{ generalInfo, generalHandlerContainer }}
                 educationalExperienceChange={{ educationalExperience, educationalHandlerContainer, writeEducationalExperienceHandler }}
                 practicalExperienceChange={{ practicalExperience, practicalHandlerContainer, writePracticalExperienceHandler }}
@@ -209,7 +205,7 @@ function App() {
                 educationalExperienceSave={{ enterEditEducationalHandler, saveEditEducationalHandler }}
                 practicalExperienceSave={{ enterEditPracticalHandler, saveEditPracticalHandler }}
             />
-            <PreviewSection
+            <Preview
                 generalInfo={generalInfo}
                 educationalExperienceContainer={educationalExperienceContainer}
                 practicalExperienceContainer={practicalExperienceContainer}
